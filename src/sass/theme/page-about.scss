@@ -1,0 +1,35 @@
+#about {
+  h2, h4 {
+    text-transform: uppercase;
+  }
+
+  dl.timeline{
+    margin: 5px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    border-left: 3px solid  $black;
+
+    dt::before {
+      content: $fa-var-circle;
+      font-family: FontAwesome;
+      color: $primary;
+      position: absolute;
+      left: -8px;
+      z-index: 2;
+    }
+  }
+
+  #about-numbers {
+    .numbers-content {
+      background-color: $primary;
+      color: $white;
+      padding: 2rem;
+    }
+  }
+  
+  #about-mission {
+    background-color: $black;
+    color: $light;
+  }
+}

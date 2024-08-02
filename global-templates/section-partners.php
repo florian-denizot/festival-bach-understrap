@@ -1,11 +1,12 @@
-<?php $partners_section = get_field('partners_section', 'option');
-  $partners_section_partners = $partners_section["partners"];
+<?php 
+$partners_section = get_field('partners_section', 'option');
+$partners_section_partners = $partners_section["partners"];
 ?>
 
 
 <!-- ******************************* Partner section **************************************** -->
 
-<div id="partners" class="py-5">
+<section id="partners" class="py-7">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -57,4 +58,4 @@
       </div>
     </div>
   </div>
-</div><!-- #partners -->
+</section><!-- #partners -->

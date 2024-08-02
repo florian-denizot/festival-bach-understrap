@@ -1,6 +1,6 @@
 <?php
 /**
- * The template to display the history section of the About page
+ * The template to display the Our Mission section of the About page
  *
  * @package understrap/understrap-child
  */
@@ -13,7 +13,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 $mission = get_field('mission');
 ?>
 
-<div id="mission" class="py-5">
+<section id="about-mission" class="py-5 anchor">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row justify-content-center">
       <div class="col-lg-10 col-xl-6">
@@ -24,4 +24,4 @@ $mission = get_field('mission');
       </div>
     </div>
   </div>
-</div>
+</section>

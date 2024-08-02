@@ -11,34 +11,56 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header();
-
-$container = get_theme_mod( 'understrap_container_type' );
 ?>
+
 <div id="about">
   <?php
-  // Program hero section 
-  get_template_part( 'page-templates/partials/main-title'); 
+  // Main title
+  get_template_part( 'global-templates/section-main-title'); 
   ?>
 
   <?php
-  // Do the left sidebar check and open div#primary.
-  get_template_part( 'page-templates/partials/about/summary' );
+  // Menu
+  get_template_part( 'global-templates/section-page-menu' );
   ?>
 
   <?php
-  // Do the left sidebar check and open div#primary.
+  // Introduction
+  get_template_part( 'global-templates/section-introduction'); 
+  ?>
+
+  <?php
+  // History
   get_template_part( 'page-templates/partials/about/history' );
   ?>
 
   <?php
-  // Do the left sidebar check and open div#primary.
+  // The festival in numbers
   get_template_part( 'page-templates/partials/about/numbers' );
   ?>
 
-<?php
-  // Do the left sidebar check and open div#primary.
+  <?php
+  // Our mission
   get_template_part( 'page-templates/partials/about/mission' );
   ?>
+
+  <?php
+  // Our Values
+  get_template_part( 'page-templates/partials/about/values' );
+  ?>
+
+  <?php
+  // Partners
+  get_template_part( 'global-templates/section-partners' );
+  ?>
+
+  <?php
+  // Newsletter
+  get_template_part( 'global-templates/section-newsletter' );
+  ?>
 </div>
+
+<?php
+get_footer();
 
 

@@ -95,3 +95,8 @@ function understrap_child_customize_controls_js() {
 	);
 }
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
+
+/**
+ * Remove prefix from page title
+ */
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );

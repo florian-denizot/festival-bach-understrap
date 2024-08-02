@@ -13,7 +13,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 $history = get_field('history');
 ?>
 
-<div id="history" class="py-5">
+<section id="about-history" class="py-7 anchor">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row justify-content-center">
       <div class="col-lg-10 col-xl-6">
@@ -24,4 +24,4 @@ $history = get_field('history');
       </div>
     </div>
   </div>
-</div>
+</section>

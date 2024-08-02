@@ -1,0 +1,202 @@
+#home{
+  // Program section
+  #home-program {
+    background-size: cover;
+    background-position-y:30%;
+    background-position-x:35%; 
+    height: calc(100vh - 50px);
+    
+    
+
+    .program-heading {
+      color: $white;
+      text-shadow: 0 0 5px $black;
+    }
+
+    .program-subheading {
+      color: $primary;
+      text-shadow: 0 0 5px $black;
+    }
+
+    .program-buttons {
+      text-align: right;
+    }
+  }
+
+  // Upcoming event section
+  #home-upcoming-events {
+    .concert {
+      a {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        color: $white;
+        text-shadow: 0 0 5px $black;
+        text-decoration: none;
+
+        .concert-body {
+          width: 100%;
+          padding: 10px;
+          background-color: rgba(0, 0, 0, 0.3);
+          @include transition(background-color 0.8s ease);
+
+
+          h4 {
+            text-transform: uppercase;
+    
+            .underline {
+              height: 2px;
+              background-color: $white;
+              width: 0%;
+              @include transition(width 0.8s ease);
+            }
+          }
+
+          .concert-infos {
+            display: none;
+          }
+          
+        }
+
+        &:hover {
+          h4 .underline{
+            width: 100%;
+          }
+
+          .concert-body {
+            background-color: rgba(0, 0, 0, 0.5);
+
+            .concert-infos {
+              display: block;
+            }
+          }
+        }
+        
+      }
+    }
+
+    .concert.calendar-link {
+      a {
+        background-size: contain;
+        background-color: $primary;
+      }
+    }
+  }
+
+
+  // Permanent blocks section
+  #home-permanent-blocks {
+
+    .grid {
+      .block {
+
+        grid-column : 1 / 13;
+        min-height: 100px;
+
+        @include media-breakpoint-up(sm) {
+          grid-column : auto;
+          grid-column-end: span 6;
+        }
+
+        h3 {
+          height: 100%;
+          position: relative;
+          overflow: hidden;
+        }
+
+        a {
+          padding: 20px;
+          display: block;
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          background-size: cover;
+          transition: all .8s;
+          overflow: hidden;
+          background-position: center;
+
+          &::before { 
+            content:"";
+            position:absolute; top:0;right:0;bottom:0;left:0;
+            background:inherit;
+            transition:inherit;
+          }
+
+          &:hover::before { 
+            transform: scale(1.2);
+          }
+
+          span {
+            color: $white;
+            text-transform: uppercase;
+            position: relative;
+            text-shadow: 0 0 6px $black;
+          }
+        }
+      }
+
+
+      @include media-breakpoint-up(md) {
+        grid-template-rows: 120px 60px 60px 120px 120px;
+
+        .block{
+          min-height: 50px;
+        }
+
+        #block1 {
+          grid-column: 1 / 5;
+          grid-row: 1 / 4;
+        }
+
+        #block2 {
+          grid-column: 5 / 9;
+          grid-row: 1 / 2;
+        }
+
+        #block3 {
+          grid-column: 5 / 9;
+          grid-row: 2 / 4;
+        }
+
+        #block4 {
+          grid-column: 1 / 9;
+          grid-row: 4 / 5;
+        }
+
+        #block5 {
+          grid-column: 1 / 5;
+          grid-row: 5 / 6;
+        }
+
+        #block6 {
+          grid-column: 5 / 9;
+          grid-row: 5 / 6;
+        }
+
+        #block7 {
+          grid-column: 9 / 13;
+          grid-row: 1 / 3;
+        }
+
+        #block8 {
+          grid-column: 9 /13;
+          grid-row: 3 / 6;
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        grid-template-rows: 120px 60px 60px 120px 120px;
+      }
+  
+      @include media-breakpoint-up(xl) {
+        grid-template-rows: 140px 70px 70px 140px 140px;
+      }
+  
+      @include media-breakpoint-up(xxl) {
+        grid-template-rows: 160px 80px 80px 160px 160px;
+      }
+    } 
+  }
+}

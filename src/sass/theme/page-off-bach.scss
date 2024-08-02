@@ -1,0 +1,27 @@
+#off-bach {
+  h2 {
+    text-transform: uppercase;
+  }
+
+  #off-bach-about {
+    h4 {
+      text-transform: uppercase;
+    }
+  }
+
+  #off-bach-infos {
+    background-color: $black;
+    color: $white;
+  }
+
+  #off-bach-artistic-director {
+    img {
+      object-fit: cover;
+    }
+
+    @include media-breakpoint-down(md) {
+      background-color: $primary; 
+    }
+  } 
+
+}

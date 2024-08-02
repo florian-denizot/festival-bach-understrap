@@ -21,8 +21,7 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
 	<!-- <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
 
 	<?php wp_head(); ?>
 </head>
@@ -37,7 +36,7 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 			<?php esc_html_e( 'Skip to content', 'understrap' ); ?>
 		</a>
 
-		<?php get_template_part( 'global-templates/topbar'); ?>
+		<?php get_template_part( 'global-templates/section-topbar'); ?>
 
 	</header>
 

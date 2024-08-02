@@ -1,0 +1,45 @@
+.anchor {
+  scroll-margin-top: 90px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
+
+#artist-modal {
+  .modal-content { 
+    padding: 2rem;
+
+    img {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.btn {
+  font-family: $headings-font-family;
+}
+
+
+.bg-note-white, .bg-note-red, .bg-note-black {
+  background-repeat: no-repeat;
+  background-size: 500px;
+  background-position-x: right; 
+}
+
+.bg-note-white {
+  background-image: url('./../images/note-white.png');
+}
+
+.bg-note-red {
+  background-image: url('./../images/note-red.png');
+}
+
+.bg-note-black {
+  background-image: url('./../images/note-black.png');
+}

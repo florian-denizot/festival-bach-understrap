@@ -7,7 +7,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 $summary = get_field('summary');
 ?>
 
-<div id="summary" class="py-5">
+<section id="about-summary" class="py-5 anchor">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row justify-content-center">
       <div class="col-lg-10 col-xl-6">
@@ -16,4 +16,4 @@ $summary = get_field('summary');
       </div>
     </div>
   </div>
-</div>
+</section>

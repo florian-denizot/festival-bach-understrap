@@ -9,10 +9,42 @@ $red: #e9121b;
 $primary: $red;  
 
 $font-family-sans-serif: "Open Sans Condensed", sans-serif;
+
 $headings-font-family: "Source Sans Pro", sans-serif;
+$headings-font-weight: 600;
 
-$btn-border-radius: 0;
-$btn-border-radius-sm: 0;
-$btn-border-radius-lg: 0;
+$display-font-weight: 500 !default;
 
-$dropdown-border-radius: 0;
+$font-size-base: 1.2rem;
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4,
+  7: $spacer * 5,
+);
+
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+
+$aspect-ratios: (
+  "1x1": 100%,
+  "4x3": calc(3 / 4 * 100%),
+  "16x9": calc(9 / 16 * 100%),
+  "21x9": calc(9 / 21 * 100%),
+  "2x3":  calc(3 / 2 * 100%),
+  "3x4":  calc(4 / 3 * 100%) 
+);
+
+$card-border-width: 0;
+
+
+
+
+

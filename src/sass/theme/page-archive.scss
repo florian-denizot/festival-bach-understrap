@@ -1,0 +1,13 @@
+#archive-page {
+
+  #main-heading {
+    background-image: url('./../images/main-title-bg.jpg');
+  }
+
+  .site-main {
+    .image > img{
+      object-fit: cover;
+      height: 100%
+    }
+  }
+}

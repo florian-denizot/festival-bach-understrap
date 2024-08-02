@@ -17,22 +17,22 @@ if( $program ):
 
     $image = $program['background_image'];
 ?>
-      <div id="program" class="top-block" style="background-image:url('<?php echo esc_url( $image['url'] ); ?>')">
-        <div class="<?php echo esc_attr( $container ); ?> py-5">
-          <div class="row">
-            <h3 class="program-heading" class="mb-5"><?php echo $header; ?></h3>
-            <h4 class="program-subheading" class="mb-4"><?php echo $subheader; ?></h4>
-            <div class="program-buttons">
-              <a class="btn btn-light btn-lg" href="<?php echo esc_attr($programButton['link']); ?>">
-                <?php echo esc_html($programButton['label']); ?>
-              </a>
-              <a class="btn btn-outline-light btn-lg" href="<?php echo esc_attr($offBachButton['link']); ?>">
-                <?php echo esc_html($offBachButton['label']); ?>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div> <!-- #program -->
+<section id="home-program" class="top-block" style="background-image:url('<?php echo esc_url( $image['url'] ); ?>')">
+  <div class="<?php echo esc_attr( $container ); ?> py-5 d-flex align-items-center h-100">
+    <div class="row">
+      <h1 class="program-heading display-1 mb-3"><?php echo $header; ?></h>
+      <h2 class="program-subheading mb-3"><?php echo $subheader; ?></h2>
+      <div class="program-buttons">
+        <a class="btn btn-light btn-lg" href="<?php echo esc_attr($programButton['link']); ?>">
+          <?php echo esc_html($programButton['label']); ?>
+        </a>
+        <a class="btn btn-outline-light btn-lg" href="<?php echo esc_attr($offBachButton['link']); ?>">
+          <?php echo esc_html($offBachButton['label']); ?>
+        </a>
+      </div>
+    </div>
+  </div>
+</section> 
 <?php 
   endif;
 endif; 
