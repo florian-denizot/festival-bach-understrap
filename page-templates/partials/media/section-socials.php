@@ -6,11 +6,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 $data = get_field('socials'); 
 
 $title = $data['title'];
-$icons = $data['icons'];
+// $icons = $data['icons'];
 $instaShortcode = $data['instagram_shortcode'];
 $youtubeShortcode = $data['youtube_shortcode'];
 
-if($icons && is_array( $icons ) && count( $icons ) > 0) :
 ?>
 
 <section id="media-socials" class="py-7 anchor">
@@ -49,5 +48,3 @@ if($icons && is_array( $icons ) && count( $icons ) > 0) :
     </div>
   </div>
 </section>
-
-<?php endif; ?>

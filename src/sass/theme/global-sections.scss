@@ -195,15 +195,12 @@
 /********************************* Partner section *********************************/
 
 #partners {
-  background-color: $black;
-  color: $white;
 
   h2 {
     text-transform: uppercase;
   }
 
   .partner-carousel {
-    
 
     .slick-track {
       display: flex;
@@ -222,19 +219,23 @@
           padding:10px;
           background-color: $white;
 
-          .item {
+          a {
+            display: block;
+            width:100%;
+          }
+
+          img {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          p { 
+            display: block;
+            width:100%;
+            margin-bottom: 0; 
+            color: $black;
+            text-transform: uppercase;
             text-align: center;
-
-            img {
-              margin-left: auto;
-              margin-right: auto;
-            }
-
-            p { 
-              margin-bottom: 0; 
-              color: $black;
-              text-transform: uppercase;
-            }
           }
         }
       }
@@ -246,8 +247,6 @@
 /******************************** Newsletter section ********************************/
 
 #newsletter {
-  background-color: $primary;
-  color: $white;
 
   h2 {
     text-transform: uppercase;

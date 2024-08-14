@@ -11,12 +11,22 @@
     border-left: 3px solid  $black;
 
     dt::before {
-      content: $fa-var-circle;
-      font-family: FontAwesome;
+      content: "\f111";
+      font-family: 'Font Awesome 5 Pro';
       color: $primary;
       position: absolute;
-      left: -8px;
+      left: -10px;
       z-index: 2;
+    }
+
+    &::after {
+      content: "\f063";
+      font-family: 'Font Awesome 5 Pro';
+      position: absolute;
+      left: -14px;
+      z-index: 2;
+      font-size: 29px;
+      color: $black;
     }
   }
 

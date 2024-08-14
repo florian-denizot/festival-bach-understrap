@@ -33,6 +33,11 @@ get_header();
 	// News slider section
 	?>
 
+<?php 
+	// Permanent block section
+	get_template_part( 'page-templates/partials/home/artistic-director'); 
+	?>
+
 	<?php 
 	// Permanent block section
 	get_template_part( 'page-templates/partials/home/permanent-blocks'); 

@@ -7,18 +7,15 @@
 // "\2192" outputs ascii character "→"
 // "\2022" outputs ascii character "•"
 
-$slick-font-path: "./fonts/" !default;
-$slick-font-family: "FontAwesome" !default;
-$slick-loader-path: "./../images/" !default;
-$slick-arrow-color: white !default;
-$slick-dot-color: black !default;
-$slick-dot-color-active: $slick-dot-color !default;
-/* $slick-prev-character: "\2190" !default; */ 
-$slick-prev-character: $fa-var-caret-left !default;
-/* $slick-next-character: "\2192" !default; */ 
-$slick-next-character: $fa-var-caret-right !default;
-/* $slick-dot-character: "\2022" !default; */
-$slick-dot-character: $fa-var-circle !default;
+$slick-font-path: "./fonts/";
+$slick-font-family: "FontAwesome";
+$slick-loader-path: "./../images/";
+$slick-arrow-color: black;
+$slick-dot-color: black;
+$slick-dot-color-active: $slick-dot-color;
+$slick-prev-character: "\f0d9"; 
+$slick-next-character: "\f0da";
+$slick-dot-character: "\f111";
 $slick-dot-size: 6px !default;
 $slick-opacity-default: 0.75 !default;
 $slick-opacity-on-hover: 1 !default;
@@ -51,7 +48,6 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 /* Icons */
-/*
 @if $slick-font-family == "slick" {
     @font-face {
         font-family: "slick";
@@ -61,7 +57,6 @@ $slick-opacity-not-active: 0.25 !default;
         font-style: normal;
     }
 }
-*/
 
 /* Arrows */
 

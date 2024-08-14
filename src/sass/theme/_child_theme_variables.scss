@@ -1,7 +1,7 @@
 // Use this file to overwrite the basic Bootstrap variables and add your own variables
 // To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
 // Just copy a variable from src/sass/assets/bootstrap5/_variables.scss, paste it here and edit the value.
-
+@use "sass:map";
 
 $enable-cssgrid: true;
 
@@ -43,6 +43,17 @@ $aspect-ratios: (
 );
 
 $card-border-width: 0;
+
+$slick-font-path: "./fonts/";
+$slick-font-family: "FontAwesome";
+$slick-loader-path: "./../images/";
+$slick-arrow-color: black;
+$slick-dot-color: black;
+$slick-dot-color-active: $slick-dot-color;
+$slick-prev-character: "\f0d9"; 
+$slick-next-character: "\f0da";
+$slick-dot-character: "\f111";
+
 
 
 

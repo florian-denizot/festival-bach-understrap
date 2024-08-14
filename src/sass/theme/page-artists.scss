@@ -9,43 +9,40 @@
     }
   }
 
-  #artists-previous {
-    background-color: $black;
-    color: $white;
-  }
 }
 
 .artist-carousel {
   .slick-slide {
-    .item {
-      .image {
-        background-size: cover;
-        background-position: center;
-        height:100%;
-        display: flex;
-        align-items: flex-end;
-        border: 1px solid $white;
-      }
 
-      .slide-content {
-        padding: 1rem;
-        color: $white;
-        text-shadow: 0 0 2px $black;
-        background-color: rgba(0, 0, 0, 0.5);
-        width: 100%;
-      }
+    a {
+      text-decoration: none;
+    }
+
+    .image {
+      background-size: cover;
+      background-position: center;
+      height:100%;
+      display: flex;
+      align-items: flex-end;
+      border: 1px solid $white;
+    }
+
+    .slide-content {
+      padding: 1rem;
+      color: $white;
+      text-shadow: 0 0 2px $black;
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
     }
   }
 }
 
 .gallery-carousel, .gallery-display {
   .slick-slide {
-    .item {
-      .image {
-        background-size: cover;
-        background-position: center;
-        height:100%;
-      }
+    .image {
+      background-size: cover;
+      background-position: center;
+      height:100%;
     }
   }
 }

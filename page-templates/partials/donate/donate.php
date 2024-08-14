@@ -23,8 +23,8 @@ if($blocks && is_array( $blocks ) && count( $blocks ) > 0) :
           <?php foreach($blocks as $block): ?>
           
             <div class="col mb-5">
-              <div class="text-center text-primary fs-3"><?php echo $block['icon']; ?></div>
-              <h3><?php echo $block['title']; ?></h3>
+              <div class="text-center text-primary fs-2 mb-4"><?php echo $block['icon']; ?></div>
+              <h4><?php echo $block['title']; ?></h4>
               <div><?php echo $block['content']; ?></div>
               <div>
                 <a href="<?php echo esc_url($block['button']['link']); ?>" class="btn btn-primary">

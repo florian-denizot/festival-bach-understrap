@@ -17,7 +17,9 @@ while ( have_posts() ) {
 
 
 <div id="single-page">
-	<section id="main-heading" class="top-block" style="background-image:url('<?php echo get_the_post_thumbnail_url($post->ID) ?>')">
+	<section id="main-heading" 
+				class="top-block" 
+				style="background-image:url('<?php echo get_the_post_thumbnail_url($post->ID) ? get_the_post_thumbnail_url($post->ID) :  get_stylesheet_directory_uri() . '/images/main-title-bg.jpg'?>')">
 		<div class="main-heading-wrapper">
 			<div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
 				<div class="row justify-content-center">

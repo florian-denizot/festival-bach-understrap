@@ -26,10 +26,10 @@ if($arguments && is_array( $arguments ) && count( $arguments ) > 0) :
                   alt="<?php echo esc_html($argument['image']['alt']); ?>"
                   class="h-100 w-100 object-fit-cover">
             </div>
-            <div class="col text-bg-dark d-flex align-items-center<?php echo ($index+1) % 2 ? ' order-lg-1': ''; ?>">
+            <div class="col text-bg-black d-flex align-items-center<?php echo ($index+1) % 2 ? ' order-lg-1': ''; ?>">
               <div class="p-5">
-                <div class="text-center text-primary fs-3"><?php echo $argument['icon']; ?></div>
-                <h3><?php echo $argument['title']; ?></h3>
+                <div class="text-center text-primary fs-2 mb-4"><?php echo $argument['icon']; ?></div>
+                <h4><?php echo $argument['title']; ?></h4>
                 <div><?php echo $argument['content']; ?></div>
               </div>
             </div>

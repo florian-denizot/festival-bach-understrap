@@ -57,6 +57,8 @@ jQuery(document).ready(function(){
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    arrows: true,
+    dots: true,
 
     responsive: [
       {
@@ -69,6 +71,36 @@ jQuery(document).ready(function(){
         breakpoint: 576,
         settings: {
           slidesToShow: 2
+        }
+      }
+    ]
+  });
+
+
+  /**
+   * Setup Testimony Carousel
+   */
+
+  jQuery('.testimony-carousel').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    arrows: true,
+    dots: true,
+
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1
         }
       }
     ]
@@ -96,6 +128,7 @@ jQuery(document).ready(function(){
       focusOnSelect: true,
       autoplay: true,
       autoplaySpeed: 3000,
+      arrows: true,
 
       responsive: [
         {
@@ -134,7 +167,6 @@ jQuery(document).ready(function(){
 });
 
 
-
 /**
  *  Update artist modal content depending on the artist link clicked 
  */
@@ -161,6 +193,27 @@ if (artistModal) {
     modalBio.textContent = bio;
   })
 }
+
+
+ /**
+   *  Update photo modal content depending on the photo clicked 
+   */
+ const photoModal = document.getElementById('photo-modal');
+ if (photoModal) {
+   photoModal.addEventListener('show.bs.modal', event => {
+
+     // Button that triggered the modal
+     const button = event.relatedTarget;
+     
+     // Extract info from data-bs-* attributes
+     const image = button.getAttribute('data-bs-image');
+
+     // Update the modal's content.
+     const modalImage = photoModal.querySelector('#photo-modal-image');
+
+     modalImage.src = image;
+   })
+ }
 
 /**
  * Smooth collapse toogle on mouseenter/mouselease for concert infos

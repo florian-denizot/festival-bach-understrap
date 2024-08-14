@@ -85,6 +85,18 @@
     }
   }
 
+  #home-artistic-director {
+
+    @include media-breakpoint-down(md) {
+      background-color: $primary; 
+    }
+    
+    .artistic-director-content {
+      columns: 3;
+      text-align: justify;
+    }
+  } 
+
 
   // Permanent blocks section
   #home-permanent-blocks {

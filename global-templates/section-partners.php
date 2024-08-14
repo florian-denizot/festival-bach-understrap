@@ -6,7 +6,7 @@ $partners_section_partners = $partners_section["partners"];
 
 <!-- ******************************* Partner section **************************************** -->
 
-<section id="partners" class="py-7">
+<section id="partners" class="py-7 text-bg-black">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -26,26 +26,28 @@ $partners_section_partners = $partners_section["partners"];
                   <?php $logo_name = $logo["name"]; ?>
                   
                   <div class="item <?php if($logo["image"]) { echo "image"; } else { echo "no-image"; } ?>">
+                    <div>
 
-                    <?php if($logo["link"]) : ?>
+                      <?php if($logo["link"]) : ?>
 
-                      <a href="<?php echo $logo["link"]["url"]?>" target="_blank">
+                        <a href="<?php echo $logo["link"]["url"]?>" target="_blank">
+                          <?php if($logo["image"]) : ?>
+                            <img src="<?php echo $logo_url ?>" alt="" style="max-height:<?php echo $logo_height; ?>" />
+                          <?php else: ?>
+                            <p><?php echo $logo_name ?></p>
+                          <?php endif; ?>
+                        </a>
+
+                      <?php else: ?>
+
                         <?php if($logo["image"]) : ?>
-                          <img src="<?php echo $logo_url ?>" alt="" style="max-height:<?php echo $logo_height; ?>" />
-                        <?php else: ?>
-                          <p><?php echo $logo_name ?></p>
-                        <?php endif; ?>
-                      </a>
+                            <img src="<?php echo $logo_url ?>" alt="" style="max-height:<?php echo $logo_height; ?>" />
+                          <?php else: ?>
+                            <p><?php echo $logo_name ?></p>
+                          <?php endif; ?>
+                      <?php endif; ?>
 
-                    <?php else: ?>
-
-                      <?php if($logo["image"]) : ?>
-                          <img src="<?php echo $logo_url ?>" alt="" style="max-height:<?php echo $logo_height; ?>" />
-                        <?php else: ?>
-                          <p><?php echo $logo_name ?></p>
-                        <?php endif; ?>
-                    <?php endif; ?>
-
+                    </div>
                   </div>
 
                 <?php endforeach; ?>

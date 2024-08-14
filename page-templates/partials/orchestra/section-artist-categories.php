@@ -41,7 +41,7 @@ $class = isset($args['class']) ? $args['class'] : '';
                       <div class="artist-card ratio ratio-3x4">
                         <div>
                           <?php if($artist['description'] && $artist['description'] !== ''): ?>
-                            <a  href="#artist-modal"
+                            <a href="#artist-modal"
                                 data-bs-toggle="modal" 
                                 data-bs-name="<?php echo $artist['name']; ?>"
                                 data-bs-image="<?php echo esc_url($artist['image']['url']); ?>"

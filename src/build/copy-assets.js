@@ -18,6 +18,14 @@ async function copyDir(src, dest) {
 // Copy all Bootstrap SCSS files.
 copyDir('./node_modules/bootstrap/scss', './src/sass/assets/bootstrap5');
 // Copy all Font Awesome SCSS files.
-copyDir('./node_modules/font-awesome/scss', './src/sass/assets/fontawesome');
+copyDir('./node_modules/@fortawesome/fontawesome-free/scss', './src/sass/assets/fontawesome');
 // Copy all Understrap SCSS files.
 copyDir('./node_modules/understrap/src/sass/theme', './src/sass/assets/understrap/theme');
+// Copy Slick files.
+fs.copyFile('./node_modules/slick-carousel/slick/slick.scss', './src/sass/assets/slick/slick.scss');
+fs.copyFile('./node_modules/slick-carousel/slick/slick-theme.scss', './src/sass/assets/slick/slick-theme.scss');
+fs.copyFile('./node_modules/slick-carousel/slick/slick.js', './src/js/slick.js');
+// Copy Masonry files.
+fs.copyFile('./node_modules/masonry-layout/masonry.js', './src/js/masonry.js');
+
+

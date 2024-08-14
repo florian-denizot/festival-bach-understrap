@@ -8,11 +8,12 @@ $data = $args['data'];
 $title = $data['title'];
 $artists = $data['artists'];
 
-$id = $args['id'] ? $args['id'] : 'artists-artists';
-$anchor = $args['anchor'] ? $args['anchor'] : 'artists-artists-a';
+$id = isset($args['id']) ? $args['id'] : 'artists-artists';
+$class = isset($args['class']) ? $args['class'] : '';
+$anchor = isset($args['anchor']) ? $args['anchor'] : 'artists-artists-a';
 ?>
 
-<section id="<?php echo $id; ?>" class="py-7 anchor">
+<section id="<?php echo $id; ?>" class="py-7 anchor <?php echo $class; ?>">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row">
       <div class="col">
@@ -31,17 +32,31 @@ $anchor = $args['anchor'] ? $args['anchor'] : 'artists-artists-a';
                 <?php $image = $artist['image']['url']; ?>
             
                 <div class="item ratio ratio-3x4">
-                  <div class="p-1">
+                  <?php if($artist['description'] && $artist['description'] !== ''): ?>
+                    <a href="#artist-modal"
+                        class="p-1"
+                        data-bs-toggle="modal" 
+                        data-bs-name="<?php echo $artist['name']; ?>"
+                        data-bs-image="<?php echo esc_url($artist['image']['url']); ?>"
+                        data-bs-bio="<?php echo esc_html($artist['description']); ?>">
+                  <?php else : ?>
+                    <div class="p-1">
+                  <?php endif; ?>
                     <div class="image" style="background-image:url('<?php echo esc_url($artist['image']['url']); ?>')">
 
                       <div class="slide-content">
                         <h5><?php echo $artist['name']; ?></h5>
                         <div><?php echo $artist['instrument']; ?></div>
                       </div>
-                    </div>
-                  </div>
 
+                    </div>
+                  <?php if($artist['description'] && $artist['description'] !== ''): ?>
+                    </a>
+                  <?php else : ?>
+                    </div>
+                  <?php endif; ?>  
                 </div>
+
               <?php endif; ?>
             <?php endif; ?>
 

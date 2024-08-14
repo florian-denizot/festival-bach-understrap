@@ -1,0 +1,23 @@
+#volunteers {
+  .wpcf7 {
+    margin: 0 0 !important;
+    max-width: none;
+  }
+
+  #volunteers-testimonies {
+    .slick-track {
+      display: flex;
+      align-items: stretch;
+      
+      .slick-slide {
+        height: auto;
+
+        & > div {
+          height: 100%;
+          display: flex;
+          align-items: stretch;
+        }
+      }
+    }
+  }
+}

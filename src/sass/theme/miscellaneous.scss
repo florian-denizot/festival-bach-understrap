@@ -26,6 +26,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+
+
 .bg-note-white, .bg-note-red, .bg-note-black {
   background-repeat: no-repeat;
   background-size: 500px;
@@ -43,3 +45,35 @@ h1, h2, h3, h4, h5, h6 {
 .bg-note-black {
   background-image: url('./../images/note-black.png');
 }
+
+
+
+
+.text-bg-primary, .text-bg-black {
+  .slick-prev::before,
+  .slick-next::before,
+  .slick-dots li button::before,
+  .slick-dots li.slick-active button:before {
+    color: $white;
+  }
+}
+
+.text-bg-white {
+  .slick-prev::before,
+  .slick-next::before,
+  .slick-dots li button::before,
+  .slick-dots li.slick-active button:before {
+    color: $black;
+  }
+}
+
+.text-bg-black { 
+  color: $white;
+  background-color: $black;
+}
+
+.text-bg-white { 
+  color: $black;
+  background-color: $white;
+}
+

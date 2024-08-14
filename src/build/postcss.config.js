@@ -15,7 +15,7 @@ const colors = [
 	'cyan',
 	'white',
 	'gray',
-	'gray-dark',
+	'gray-dark'
 ];
 
 module.exports = ( ctx ) => {

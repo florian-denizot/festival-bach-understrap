@@ -13,7 +13,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 $values = get_field('values');
 ?>
 
-<section id="about-values" class="py-5 anchor">
+<section id="about-values" class="py-7 anchor">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row justify-content-center">
       <div class="col-xl-8 col-xxl-9">

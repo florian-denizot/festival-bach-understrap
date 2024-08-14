@@ -45,9 +45,15 @@ get_header();
   $args = array(
     "data" => get_field('previous_artists'),
     "id" => "artists-previous",
-    "anchor" => "artists-previous-a"
+    "anchor" => "artists-previous-a",
+    "class" => "text-bg-black"
   );
   get_template_part( 'page-templates/partials/artists/artists', null, $args); 
+  ?>
+
+  <?php
+  // Artist Modal
+  get_template_part( 'page-templates/partials/orchestra/component-artist-modal'); 
   ?>
 
   <?php
