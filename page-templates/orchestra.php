@@ -53,7 +53,7 @@ get_header();
     'id' => 'orchestra-voice-artists',
     'group_name'=> 'choir',
     'category_name' => 'voice',
-    'class' => 'text-bg-primary'
+    'class' => 'text-bg-light'
   );
   get_template_part( 'page-templates/partials/orchestra/section-artist-categories', null, $args); 
   ?>

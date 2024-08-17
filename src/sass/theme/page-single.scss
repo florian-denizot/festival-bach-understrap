@@ -1,20 +1,19 @@
 #single-page {
   .entry-content{
-    columns: 3;
     text-align: justify;
 
     img {
       width: 100%;
     }
+  }  
+}
 
-    @include media-breakpoint-down(xl) {
-      columns: 2;
-    }
-  
-    @include media-breakpoint-down(md) {
-      columns: auto;
-    }
+.single {
+  .entry-content {
+    margin-bottom: 2rem;
   }
 
-  
+  #primary {
+    margin-bottom: 2rem;
+  }
 }

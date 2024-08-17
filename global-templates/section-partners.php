@@ -1,5 +1,6 @@
 <?php 
 $partners_section = get_field('partners_section', 'option');
+$partner_heading = $partners_section["heading"];
 $partners_section_partners = $partners_section["partners"];
 ?>
 
@@ -10,7 +11,7 @@ $partners_section_partners = $partners_section["partners"];
   <div class="container">
     <div class="row">
       <div class="col">
-        <h2>Partenaires</h2>
+        <h2><?php echo $partner_heading; ?></h2>
         <div class="partner-carousel">
           
           <?php if( $partners_section_partners ): ?>

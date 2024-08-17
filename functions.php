@@ -2,7 +2,7 @@
 /**
  * Understrap Child Theme functions and definitions
  *
- * @package UnderstrapChild
+ * @package festival-bach-understrap
  */
 
 // Exit if accessed directly.

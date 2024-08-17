@@ -1,0 +1,23 @@
+#concert {
+  .concert-social {
+    text-transform: uppercase;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .concert-map {
+    filter: grayscale(100%);
+  }
+
+  .concert-live, .concert-price, .concert-instrument, .concert-venue {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+
+    i {
+      margin-right: 1em;
+    }
+  }
+}

@@ -1,0 +1,98 @@
+# Copyright (C) 2024 Florian Denizot
+# This file is distributed under the same license as the Festival Bach Understrap theme.
+msgid ""
+msgstr ""
+"Project-Id-Version: Festival Bach Understrap 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/festival-bach-understrap\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-08-15T20:17:45+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: festival-bach-understrap\n"
+
+#. Theme Name of the theme
+#: style.css
+msgid "Festival Bach Understrap"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Festival Bach Understrap (Child Theme)"
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Florian Denizot"
+msgstr ""
+
+#. Template Name of the theme
+msgid "About"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Artists"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Donate"
+msgstr ""
+
+#. Template Name of the theme
+msgid "FAQ"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Home"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Media"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Off-Bach"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Orchestra and choir"
+msgstr ""
+
+#: page-templates/partials/program/content-filter.php:42
+msgid "Filters"
+msgstr ""
+
+#: page-templates/partials/program/content-filter.php:51
+msgid "Instruments"
+msgstr ""
+
+#: page-templates/partials/program/content-filter.php:69
+msgid "Categories"
+msgstr ""
+
+#: page-templates/partials/program/content-filter.php:86
+msgid "Venue"
+msgstr ""
+
+#: page-templates/partials/program/content-filter.php:104
+msgid "Filter"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Partners"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Program"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Team"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Volunteers"
+msgstr ""

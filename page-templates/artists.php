@@ -55,7 +55,7 @@ get_header();
   // Artist Modal
   get_template_part( 'page-templates/partials/orchestra/component-artist-modal'); 
   ?>
-
+  
   <?php
   // Photo Gallery
   get_template_part( 'page-templates/partials/artists/photo-gallery'); 

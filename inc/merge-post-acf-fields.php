@@ -149,22 +149,21 @@ class MergePostAndACFFields {
     $filtered_array = Array();
   
     if($taxonomy_match && count($taxonomy_match) > 0 ) {
-        if($array) { 
-          foreach($array as $item) { 
-              if($item[$key] && count($item[$key]) > 0) { 
-                foreach($item[$key] as $instrument_taxonomy_term) { 
-                  $instrument_taxonomy_term_id = (int) $instrument_taxonomy_term->term_id;
-                  foreach($taxonomy_match as $instrument_match_term) { 
-                    $instrument_match_term = (int) $instrument_match_term;
-                    if($instrument_taxonomy_term_id == $instrument_match_term) {
-                      if(!in_array($item, $filtered_array)) {
-                        array_push($filtered_array, $item);
-                      }
-                    }
+      if($array) { 
+        foreach($array as $item) { 
+          if($item[$key] && count($item[$key]) > 0) { 
+            foreach($item[$key] as $instrument_taxonomy_term) { 
+              $instrument_taxonomy_term_id = (int) $instrument_taxonomy_term->term_id;
+              foreach($taxonomy_match as $instrument_match_term) { 
+                $instrument_match_term = (int) $instrument_match_term;
+                if($instrument_taxonomy_term_id == $instrument_match_term) {
+                  if(!in_array($item, $filtered_array)) {
+                    array_push($filtered_array, $item);
                   }
-  
+                }
               }
             }
+          }
         }
       }
       else {

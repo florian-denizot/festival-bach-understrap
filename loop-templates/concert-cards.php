@@ -98,7 +98,7 @@ $concerts  = array_slice($concerts, 0, 5);
 
 <!-- Programs Body -->
 <div class="row">
-  <?php if($concerts): ?>
+  <?php if(count($concerts)): ?>
     <?php foreach($concerts as $concert): ?>
       <?php
         $concert_title = $concert["concert_title"];
@@ -109,7 +109,7 @@ $concerts  = array_slice($concerts, 0, 5);
         $concert_is_live = $concert["concert_is_live"];
       ?>
       <div class="col-12 col-sm-6 col-lg-4 mb-4">
-        <div class="ratio ratio-4x3 concert">
+        <div class="ratio ratio-16x9 concert">
 
           <a href="<?php echo $concert["guid"]?>" 
               class="d-flex align-items-end"
@@ -126,11 +126,11 @@ $concerts  = array_slice($concerts, 0, 5);
                   <?php echo $concert["concert_sub_title"]; ?>
                 </div>
                 <div class="date">
-                  <i class="fa fa-calendar-o"> </i> <strong><?php echo (ICL_LANGUAGE_CODE == "fr" ? dateToFrench(date( "d F Y", strtotime($concert_date_time)), 'd F Y') : $concert_date_time ); ?></strong>
+                  <i class="far fa-calendar fa-fw me-2"> </i> <strong> <?php echo date_i18n( get_option( 'date_format' ), strtotime($concert["concert_date_time"]) ); ?></strong>
                 </div>
                 <?php if($concert_is_live): ?>
                 <div class="live">
-                  <i class="fas fa-circle"></i> live
+                  <i class="fas fa-circle me-2"></i> live
                 </div>
                 <?php endif; ?>
               </div>
@@ -141,6 +141,10 @@ $concerts  = array_slice($concerts, 0, 5);
         </div>
       </div>
     <?php endforeach; ?>
+  <?php else: ?>
+    <div class="col">
+      <?php _e("No upcoming concert was found.", 'festival-bach-understrap'); ?>
+    </div>
   <?php endif; ?>
   <div class="col-12 col-sm-6 col-lg-4 mb-4">
     <div class="ratio ratio-4x3 concert calendar-link">

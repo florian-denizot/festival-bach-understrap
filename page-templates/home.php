@@ -20,11 +20,6 @@ get_header();
 	?>
 
 	<?php
-	// Do the left sidebar check and open div#primary.
-	get_template_part( 'global-templates/left-sidebar-check' );
-	?>
-
-	<?php
 	// Upcoming event section
 	get_template_part( 'page-templates/partials/home/upcoming-events'); 
 	?>
@@ -41,11 +36,6 @@ get_header();
 	<?php 
 	// Permanent block section
 	get_template_part( 'page-templates/partials/home/permanent-blocks'); 
-	?>
-
-	<?php
-	// Do the right sidebar check and close div#primary.
-	get_template_part( 'global-templates/right-sidebar-check' );
 	?>
 
 	<?php 
