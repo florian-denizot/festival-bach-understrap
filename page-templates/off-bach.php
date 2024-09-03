@@ -20,7 +20,7 @@ get_header();
   ?>
 
   <?php
-  // Program
+  // Menu
   get_template_part( 'page-templates/partials/off-bach/menu'); 
   ?>
 
@@ -37,6 +37,21 @@ get_header();
   <?php
   // The Word of the Artistic Director
   get_template_part( 'page-templates/partials/off-bach/artistic-director'); 
+  ?>
+
+  <?php
+  // Artists
+  $args = array(
+    "data" => get_field('artists'),
+    "id" => "off-bach-artists",
+    "class" => "text-bg-black"
+  );
+  get_template_part( 'page-templates/partials/artists/artists', null, $args); 
+  ?>
+
+<?php
+  // Artist Modal
+  get_template_part( 'global-templates/content-artist-modal'); 
   ?>
 
   <?php

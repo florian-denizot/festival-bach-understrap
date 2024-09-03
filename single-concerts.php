@@ -19,12 +19,15 @@ get_header();
   get_template_part( 'page-templates/partials/concert/main-title'); 
   ?>
 
-<?php
-  // Main title
+  <?php
+  // Concert description
   get_template_part( 'page-templates/partials/concert/content'); 
   ?>
 
-
+  <?php
+  // Concert ticket
+  get_template_part( 'page-templates/partials/concert/ticket'); 
+  ?>
 
   <?php
   // Partners

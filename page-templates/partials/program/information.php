@@ -11,11 +11,11 @@ $blocks = $data['blocks'];
 if($blocks && is_array( $blocks ) && count( $blocks ) > 0) :
 ?>
 
-<section id="concerts-infos" class="py-7 anchor">
+<section id="concerts-infos" class="py-9 anchor">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row">
       <div class="col">
-        <h2 class="mb-5"><?php echo $title; ?></h2>
+        <h2 class="mb-6"><?php echo $title; ?></h2>
         <div class="row row-cols-1 row-cols-md-2 gx-7 gy-4">
           
           <?php foreach($blocks as $index => $block): ?>

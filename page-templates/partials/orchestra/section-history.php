@@ -11,11 +11,11 @@ $events = $data['events'];
 if($events && is_array( $events ) && count( $events ) > 0) :
 ?>
 
-<section id="orchestra-history" class="py-7 anchor text-bg-black">
+<section id="orchestra-history" class="py-9 anchor text-bg-black">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row">
       <div class="col">
-        <h2 class="mb-5"><?php echo $title; ?></h2>
+        <h2 class="mb-6"><?php echo $title; ?></h2>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 gx-4 gy-5">
           
           <?php foreach($events as $event): ?>

@@ -44,7 +44,7 @@
 		"phpstan-baseline": "@php ./vendor/phpstan/phpstan/phpstan analyse -a src/phpstan/autoload.php --generate-baseline",
 		"post-install-cmd": "@phpcs-config-set",
 		"post-update-cmd": "@phpcs-config-set",
-		"make-php-pot": "./vendor/bin/wp i18n make-pot . languages/php/festval-bach-understrap.pot --exclude='css,fonts,images,languages,nbproject,node_modules,src,vendor'"
+		"make-php-pot": "./vendor/bin/wp i18n make-pot . languages/php/festival-bach-understrap.pot --exclude='css,fonts,images,languages,nbproject,node_modules,src,vendor,dist'"
 	},
 	"support": {
 		"issues": "https://github.com/understrap/understrap/issues",

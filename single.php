@@ -25,7 +25,7 @@ while ( have_posts() ) {
 				<div class="row justify-content-center">
 					<div class="col-lg-10 col-xl-10 main-heading-content">
 						<?php the_title( '<h1 class="display-1">', '</h1>' ); ?>
-						<div class="underline my-4"></div>
+						<div class="bottom-line my-4"></div>
 					</div>
 				</div>
 			</div>

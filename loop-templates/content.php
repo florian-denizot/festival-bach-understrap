@@ -8,7 +8,6 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 ?>
-
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<div class="image ratio ratio-16x9 mb-4">

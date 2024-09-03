@@ -3,7 +3,7 @@ $partners_section = get_field('partners_section', 'option');
 $partners_section_partners = $partners_section["partners"];
 ?>
 
-<section id="partners-partners" class="py-7">
+<section id="partners-partners" class="py-9">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -11,7 +11,7 @@ $partners_section_partners = $partners_section["partners"];
         <?php if( $partners_section_partners ): ?>
           
           <?php foreach( $partners_section_partners as $partner ) : ?>
-            <h2 class="my-4"><?php echo $partner['heading']; ?></h2>
+            <h3 class="mb-4 mt-6"><?php echo $partner['heading']; ?></h3>
             <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-5 mb-7 justify-content-center">
               <?php if( $partner["logos"] ): ?>
                 <?php foreach( $partner["logos"] as $logo ) : ?>

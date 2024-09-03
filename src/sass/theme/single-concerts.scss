@@ -1,23 +1,60 @@
 #concert {
-  .concert-social {
-    text-transform: uppercase;
 
-    a {
-      text-decoration: none;
+  .concert-info {
+
+    .concert-social {
+      text-transform: uppercase;
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    .concert-map {
+      filter: grayscale(100%);
+    }
+
+    .concert-date {
+      font-weight: 700;
+    }
+
+    .concert-live, .concert-price, .concert-instrument, .concert-venue, .concert-date {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5em;
+
+      i {
+        margin-right: 1em;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      background-color: $light;
+
+      .concert-map {
+        margin-right: - calc($grid-gutter-width / 2);
+        margin-left: - calc($grid-gutter-width / 2);
+      }
     }
   }
 
-  .concert-map {
-    filter: grayscale(100%);
-  }
+  #concert-ticket {
+    
+    .ticket-card {
+      color: $white;
+      text-decoration: none;
 
-  .concert-live, .concert-price, .concert-instrument, .concert-venue {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5em;
+      &>div {
+        background-color: $primary;
+      }
 
-    i {
-      margin-right: 1em;
+      &:hover {
+        color: $white;
+
+        &>div {
+          background-color: $black;
+        }
+      }
     }
   }
 }

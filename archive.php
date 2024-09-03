@@ -23,7 +23,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="row justify-content-center">
 					<div class="col-lg-10 col-xl-10 main-heading-content">
 						<?php the_archive_title( '<h1 class="display-1">', '</h1>' ); ?>
-						<div class="underline my-4"></div>
+						<div class="bottom-line my-4"></div>
 						<?php the_archive_description( '<h2>', '</h2>' ); ?>
 					</div>
 				</div>
@@ -38,7 +38,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<?php
 				// Do the left sidebar check and open div#primary.
-				get_template_part( 'global-templates/left-sidebar-check' );
+				// get_template_part( 'global-templates/left-sidebar-check' );
 				?>
 
 				<main class="site-main" id="main">
@@ -79,7 +79,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				understrap_pagination();
 
 				// Do the right sidebar check and close div#primary.
-				get_template_part( 'global-templates/right-sidebar-check' );
+				// get_template_part( 'global-templates/right-sidebar-check' );
 				?>
 
 			</div><!-- .row -->

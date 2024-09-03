@@ -3,7 +3,7 @@ $title = get_field('newsletter_title', 'option');
 $description = get_field('newsletter_description', 'option');
 ?>
 
-<section id="newsletter" class="py-7 text-bg-primary">
+<section id="newsletter" class="py-9 text-bg-primary">
   <div class="container">
     <div class="row">
       

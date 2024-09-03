@@ -6,8 +6,10 @@ async function copyDir(src, dest) {
     let entries = await fs.readdir(src, { withFileTypes: true });
 	let ignore = [
 		'node_modules',
+		'nbproject',
 		'dist',
 		'src',
+		'vendor',
 		'.github',
 		'.browserslistrc',
 		'.editorconfig',
@@ -21,7 +23,8 @@ async function copyDir(src, dest) {
 		'package.json',
 		'package-lock.json',
 		'phpcs.xml.dist',
-		'readme.txt'
+		'readme.txt',
+		'releases'
 	];
 
     for (let entry of entries) {

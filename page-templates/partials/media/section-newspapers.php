@@ -7,20 +7,20 @@ $data = get_field('newspapers');
 
 $title = $data['title'];
 $stories = $data['stories'];
-
-if($stories && is_array( $stories ) && count( $stories ) > 0) :
 ?>
 
-<section id="media-newspapers" class="py-7 anchor text-bg-primary">
+<?php if($stories && is_array( $stories ) && count( $stories ) > 0) : ?>
+
+<section id="media-newspapers" class="py-9 anchor">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row">
       <div class="col">
-        <h2 class="mb-4"><?php echo $title; ?></h2>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+        <h2 class="mb-6"><?php echo $title; ?></h2>
+        <div class="newspaper-carousel">
           
           <?php foreach($stories as $story): ?>
-            <div class="col">
-              <div class="card h-100 text-bg-black">
+            <div>
+              <div class="card text-bg-black">
 
                 <?php if ($story['image'] && $story['image']['url']): ?>
                   <?php $image = $story['image']['url']; ?>
@@ -38,13 +38,13 @@ if($stories && is_array( $stories ) && count( $stories ) > 0) :
                   </div>
                 </div>
                 <div class="card-footer d-grid">
-                  <a href="<?php echo $story['link']; ?>" target="_blank" class="btn btn-light">
-                    Lire l'article
+                  <a href="<?php echo $story['link']; ?>" target="_blank" class="btn btn-outline-light">
+                    <?php _e('Read the article', 'festival-bach-understrap'); ?>
                   </a>
                 </div>
 
               </div> 
-            </div> 
+            </div>
           <?php endforeach; ?>
        
         </div>

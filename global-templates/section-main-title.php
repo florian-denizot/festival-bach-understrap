@@ -25,13 +25,13 @@ endif;
             <div class="main-heading-image-title">
               <img src="<?php echo $imageTitle; ?>"/>
             </div>
-            <div class="underline my-3"></div>
+            <div class="bottom-line my-3"></div>
           <?php elseif($mainHeading['main_title']): ?>
             <h1 class="display-1"><?php echo $mainHeading['main_title']; ?></h1>
-            <div class="underline my-4"></div>
+            <div class="bottom-line my-4"></div>
           <?php endif; ?>
           <?php if($mainHeading['subtitle']): ?>
-            <h2><?php echo $mainHeading['subtitle']; ?></h2>
+            <h3><?php echo $mainHeading['subtitle']; ?></h3>
           <?php endif; ?>
         </div>
       </div>

@@ -62,7 +62,13 @@ get_header();
 
   <?php
   // Artist Modal
-  get_template_part( 'page-templates/partials/orchestra/component-artist-modal'); 
+  get_template_part( 'global-templates/content-artist-modal'); 
+  ?>
+
+  <?php
+  // Other Pages
+  $args = [];
+  get_template_part( 'global-templates/section-other-pages', null, $args);
   ?>
 
   <?php

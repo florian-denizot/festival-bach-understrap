@@ -10,12 +10,12 @@ $questions = $data['questions'];
 
 if($questions && is_array( $questions ) && count( $questions ) > 0) :
 ?>
-<section id="donate-faq" class="py-7 anchor">
+<section id="donate-faq" class="py-9 anchor">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row">
       <div class="col">
         <?php if($title): ?>
-          <h2 class="mb-4"><?php echo $title; ?></h2>
+          <h2 class="mb-6"><?php echo $title; ?></h2>
         <?php endif; ?>
           
           <div class="accordion accordion-primary" id="accordionFAQ">

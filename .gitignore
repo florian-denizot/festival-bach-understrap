@@ -39,6 +39,7 @@
 *.komodoproject
 *.sublime*
 *.tmproj*
+/nbproject/
 
 # Dependencies
 bower_components

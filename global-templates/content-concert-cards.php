@@ -94,11 +94,14 @@ function newConcerts($concert) {
 
 $concerts  = array_slice($concerts, 0, 5);
 
+$calLinkLabel = $args['calLinkLabel'];
+$calLinkUrl = $args['calLinkUrl']; 
+
 ?>
 
 <!-- Programs Body -->
-<div class="row">
-  <?php if(count($concerts)): ?>
+<?php if(count($concerts)): ?>
+  <div class="row">
     <?php foreach($concerts as $concert): ?>
       <?php
         $concert_title = $concert["concert_title"];
@@ -111,28 +114,23 @@ $concerts  = array_slice($concerts, 0, 5);
       <div class="col-12 col-sm-6 col-lg-4 mb-4">
         <div class="ratio ratio-16x9 concert">
 
-          <a href="<?php echo $concert["guid"]?>" 
+          <a href="<?php echo get_permalink($concert["ID"]); ?>" 
               class="d-flex align-items-end"
               style="background-image:url('<?php echo $concert["concert_image"]["url"]; ?>');"
-              trigger-collapse="collapse-infos-<?php echo $concert["guid"]; ?>">
+              trigger-collapse="collapse-infos-<?php echo $concert["ID"]; ?>">
     
             <div class="concert-body">
               <h4 class="title">
                 <?php echo $concert["concert_title"]; ?>
                 <div class="underline"></div> 
               </h4>
-              <div class="concert-infos collapse" id="collapse-infos-<?php echo $concert["guid"]; ?>">
+              <div class="concert-infos collapse" id="collapse-infos-<?php echo $concert["ID"]; ?>">
                 <div class="description">
                   <?php echo $concert["concert_sub_title"]; ?>
                 </div>
-                <div class="date">
-                  <i class="far fa-calendar fa-fw me-2"> </i> <strong> <?php echo date_i18n( get_option( 'date_format' ), strtotime($concert["concert_date_time"]) ); ?></strong>
-                </div>
-                <?php if($concert_is_live): ?>
-                <div class="live">
-                  <i class="fas fa-circle me-2"></i> live
-                </div>
-                <?php endif; ?>
+              </div>
+              <div class="date">
+                <i class="far fa-calendar fa-fw me-2"> </i> <strong> <?php echo date_i18n( get_option( 'date_format' ), strtotime($concert["concert_date_time"]) ); ?></strong>
               </div>
             </div>
             
@@ -141,21 +139,22 @@ $concerts  = array_slice($concerts, 0, 5);
         </div>
       </div>
     <?php endforeach; ?>
-  <?php else: ?>
-    <div class="col">
-      <?php _e("No upcoming concert was found.", 'festival-bach-understrap'); ?>
+    <div class="col-12 col-sm-6 col-lg-4 mb-4">
+      <div class="ratio ratio-16x9 concert calendar-link">
+        <img src="<?php echo get_stylesheet_directory_uri() . '/images/main-title-bg.jpg'; ?>" class="object-fit-cover">
+        <a href="<?php echo esc_url($calLinkUrl); ?>"
+            class="d-flex align-items-center justify-content-center fs-3">
+            <div>
+              <?php echo $calLinkLabel; ?>
+              <div class="underline"></div> 
+            </div>
+        </a>
+      </div>    
     </div>
-  <?php endif; ?>
-  <div class="col-12 col-sm-6 col-lg-4 mb-4">
-    <div class="ratio ratio-4x3 concert calendar-link">
-    <a href=""
-      class="d-flex align-items-end"
-      style="background-image:url('http://localhost:3000/wp-content/uploads/2021/09/FestBachMtl.png'); "></a>
-
-    </a>
-    </div>    
   </div>
-</div>
+<?php endif; ?>
+  
+
 
 <?php
   // Convert a date or timestamp into French.

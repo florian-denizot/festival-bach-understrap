@@ -4,9 +4,7 @@ defined( 'ABSPATH' ) || exit;
 
 $container = get_theme_mod( 'understrap_container_type' );
 
-/*
-  ** Desc: Get Template Params
-*/
+//Get Template Params
 $taxonomy_terms = $args['taxonomy_terms'];
 $instruments_taxonomy_terms = isset($taxonomy_terms["instruments_taxonomy_terms"]) ? $taxonomy_terms["instruments_taxonomy_terms"] : array();
 $categories_taxonomy_terms = isset($taxonomy_terms["categories_taxonomy_terms"]) ? $taxonomy_terms["categories_taxonomy_terms"] : array();
@@ -17,18 +15,13 @@ $instrument_matches = isset($parameters_matches["instrument"]) ? $parameters_mat
 $category_matches = isset($parameters_matches["concert_category"]) ? $parameters_matches["concert_category"] : array();
 $hall_matches = isset($parameters_matches["hall"]) ? $parameters_matches["hall"] : array();
 
-$collapse = $args['collapse_filters']
+$collapse = $args['collapse_filters'];
 
-// echo "link: <br>";
-// print_r(unserialize(serialize(parse_url((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"))));
-
-// echo "post slug: <br>";
-// global $post;
-// $post_slug = $post->post_name;
-// print_r($post_slug);
+$display = get_field('display_filters');
 
 ?>
-<section id="volunteers-contact" class="mt-5 anchor">
+<?php if($display): ?>
+<section id="program-filters" class="mt-5 anchor">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row">
       <div class="col">
@@ -129,4 +122,4 @@ $collapse = $args['collapse_filters']
     </div>
   </div>
 </section>
-
+<?php endif; ?>

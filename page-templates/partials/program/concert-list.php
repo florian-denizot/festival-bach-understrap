@@ -23,7 +23,7 @@ function cmp($a, $b){
 usort($concerts, "cmp");
 ?>
 
-<section id="concerts" class="py-7 anchor">
+<section id="concerts" class="py-9 anchor">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     
     <?php if(count($concerts)): ?>
@@ -48,35 +48,30 @@ usort($concerts, "cmp");
           ?>
 
           <div class="col">
-            <div class="card shadow h-100">
-              <a href="<?php echo get_permalink($concert_id);?>">
-                <div class="concert-image ratio ratio-16x9 text-white mb-3">
-                  <img <?php echo $concert_image["url"] ? "src=" . $concert_image["url"] : null; ?> alt="" class="object-fit-cover"/>
-                  <div class="d-flex align-items-end">
-                    <?php if ( $concert_is_free ): ?>
-                      <div class="concert-free badge text-bg-primary m-2"><?php _e('Free', 'festival-bach-understrap'); ?></div>
-                    <?php endif; ?>
-                    <?php if ( $concert_is_pre_opening ): ?>
-                      <div class="concert-free badge text-bg-primary m-2"><?php _e('Pre-opening', 'festival-bach-understrap'); ?></div>
-                    <?php endif ?>
-                    <?php if($concert_is_full): ?>
-                    <div class="concert-full badge text-bg-primary m-2"><?php _e('Full', 'festival-bach-understrap'); ?></div>
-                    <?php endif; ?>
-                    <?php if($concert_is_live): ?>
-                      <div class="concert-full badge text-bg-primary m-2"><?php _e('Live available', 'festival-bach-understrap'); ?></div>
-                    <?php endif;?>
-                  </div>
+            <a href="<?php echo get_permalink($concert_id);?>" class="card shadow h-100 d-flex">
+              <div class="concert-image ratio ratio-16x9 text-white mb-3">
+                <img <?php echo $concert_image["url"] ? "src=" . $concert_image["url"] : null; ?> alt="" class="object-fit-cover"/>
+                <div class="d-flex align-items-end flex-wrap justify-content-start">
+                  <?php if ( $concert_is_free ): ?>
+                    <div class="concert-free badge text-bg-primary m-2"><?php _e('Free', 'festival-bach-understrap'); ?></div>
+                  <?php endif; ?>
+                  <?php if ( $concert_is_pre_opening ): ?>
+                    <div class="concert-free badge text-bg-primary m-2"><?php _e('Pre-opening', 'festival-bach-understrap'); ?></div>
+                  <?php endif ?>
+                  <?php if($concert_is_full): ?>
+                  <div class="concert-full badge text-bg-primary m-2"><?php _e('Full', 'festival-bach-understrap'); ?></div>
+                  <?php endif; ?>
+                  <?php if($concert_is_live): ?>
+                    <div class="concert-full badge text-bg-primary m-2"><?php _e('Live available', 'festival-bach-understrap'); ?></div>
+                  <?php endif;?>
                 </div>
-              </a>
+              </div>
               <div class="card-body">
                 <h6 class="card-title">
-                  <a href="<?php echo get_permalink($concert_id);?>">
-                    <?php echo $concert_title;?>
-                  </a>
+                  <?php echo $concert_title;?>
+                  <div class="underline underline-black"></div>
                 </h6>
                 <div><?php echo $concert_sub_title;?></div>
-                
-                
               </div>
               <div class="card-footer">
                 <?php if($hall): ?>
@@ -90,7 +85,7 @@ usort($concerts, "cmp");
                   <div><strong><?php echo $day_of_week;?> - <?php echo $concert_date;?></strong></div>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
 
         <?php endforeach; ?>

@@ -31,7 +31,12 @@ get_header();
 
   <?php
   // History
-  get_template_part( 'page-templates/partials/about/history' );
+  // Discover Montreal
+  $args = [
+    'class' => "text-bg-light",
+    'id'    => 'about-history'
+  ];
+  get_template_part( 'page-templates/partials/about/history', null, $args );
   ?>
 
   <?php

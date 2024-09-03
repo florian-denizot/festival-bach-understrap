@@ -7,7 +7,7 @@ $groups = get_field('faqs');
 
 if($groups && is_array( $groups ) && count( $groups ) > 0) :
 ?>
-<section id="faq-faq" class="py-7 anchor">
+<section id="faq-faq" class="py-9 anchor">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row">
       <div class="col">

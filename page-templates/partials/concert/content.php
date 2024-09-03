@@ -16,15 +16,17 @@ $instruments = get_the_terms($id, "instruments");
 $has_different_dates = $concert["has_different_dates"];
 // concert date format
 // $date = (new DateTime(str_replace("/", "-",$concert["concert_date_time"])))->format('F d, Y H:i');
-// $temp_1 = $date;
+$date = (new DateTime(str_replace("/", "-", $concert["concert_date_time"])))->format(get_option('date_format') . ' - ' . get_option('time_format'));
+$temp_1 = $date;
 
 
 // $date = (ICL_LANGUAGE_CODE == "fr" ? dateToFrench2($date, 'd F Y - H:i') : $date );
 // $date_2 = (new DateTime(str_replace("/", "-",$concert["concert_date_time_2"])))->format('d F Y H:i');
-// $temp_2 = $date_2;
-// $concert_date_2 = (ICL_LANGUAGE_CODE == "fr" ? dateToFrench2($concert_date_2, 'd F Y - H:i') : $concert_date_2 );
-// $are_concerts_date_time_equal = (date('d F Y H:i', strtotime($temp_1)) == date('d F Y H:i', strtotime($temp_2)) ) ? true : false;
-// $are_concerts_date_equal = (date('d F Y', strtotime($temp_1)) == date('d F Y', strtotime($temp_2)) ) ? true : false;
+$date_2 = (new DateTime(str_replace("/", "-", $concert["concert_date_time_2"])))->format(get_option('date_format') . ' - ' . get_option('time_format'));
+$temp_2 = $date_2;
+// $date_2 = (ICL_LANGUAGE_CODE == "fr" ? dateToFrench2($date_2, 'd F Y - H:i') : $date_2 );
+$are_concerts_date_time_equal = (date('d F Y H:i', strtotime($temp_1)) == date('d F Y H:i', strtotime($temp_2)) ) ? true : false;
+$are_concerts_date_equal = (date('d F Y', strtotime($temp_1)) == date('d F Y', strtotime($temp_2)) ) ? true : false;
 
 
 $price = $concert["concert_price"];
@@ -50,28 +52,30 @@ $lng = $hall["address"]["lng"];
 
       <div class="col-12 col-md-6">
         <?php if ($produit_par) : ?>
-          <h3 class="concert-partner">
+          <h5 class="concert-partner">
             <?php _e("Produced by", "festival-bach-understrap"); ?> : <strong><?php echo $produit_par ?></strong>
-          </h3>
+          </h5>
         <?php endif; ?>
 
         <?php if ($en_partenariat_avec): ?>
-          <h3 class="concert-partner">
+          <h5 class="concert-partner">
             <?php  _e("In partnership with", "festival-bach-understrap"); ?> : <strong><?php echo $en_partenariat_avec ?></strong>
-          </h3>
+          </h5>
         <?php endif; ?>
 
         <?php if($subtitle): ?>
-          <p class="lead"><?php echo $subtitle; ?>
+          <div class="display-5 mb-5 text-uppercase">
+            <?php echo $subtitle; ?>
+          </div>
         <?php endif; ?>
-        <div><?php echo $description; ?></div>
+        <div class="text-justify"><?php echo $description; ?></div>
 
         <?php if ( $program_url ) { ?>
           <h3><a href="<?php echo $program_url; ?>" target="_blank"><?php _e("Evening Program", "festival-bach-understrap");?></a></h3>
         <?php } ?>
       </div>
 
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-6 concert-info">
         <div class="text-bg-light h-100">
           <div class="px-md-4 pt-3">
 
@@ -79,21 +83,28 @@ $lng = $hall["address"]["lng"];
             <ul class="list-unstyled">
 
               <!-- Dates -->
-              <?php /*if($has_different_dates && $are_concerts_date_equal): ?>
-                <li class="concert-date"><i class="fas fa-calendar-alt"></i>
-                  <span><?php echo $concert_date; ?></span>
-                  <span>&nbsp;<?php echo (ICL_LANGUAGE_CODE == "fr") ? "et" : "and";?>&nbsp;</span>
+              <?php if($has_different_dates && $are_concerts_date_equal): ?>
+                <li class="concert-date">
+                  <i class="fas fa-calendar-alt fa-fw"></i>
+                  <span><?php echo $date; ?></span>
+                  <span>&nbsp;<?php _e("and", 'festival-bach-understrap');?>&nbsp;</span>
                   <span><?php echo date('H:i', strtotime($temp_2)); ?></span>
                 </li>
               <?php elseif($has_different_dates && !$are_concerts_date_equal): ?>
-                <li class="concert-date"><i class="fas fa-calendar-alt"></i><span><?php echo $concert_date; ?></span>
+                <li class="concert-date">
+                  <i class="fas fa-calendar-alt fa-fw"></i>
+                  <span><?php echo $date; ?></span>
                 </li>
-                <li class="concert-date"><i class="fas fa-calendar-alt"></i><span><?php echo $concert_date_2; ?></span>
+                <li class="concert-date">
+                  <i class="fas fa-calendar-alt fa-fw"></i>
+                  <span><?php echo $date_2; ?></span>
                 </li>
-              <?php elseif($concert_date): ?>
-                <li class="concert-date"><i class="fas fa-calendar-alt"></i><span><?php echo $concert_date; ?></span>
+              <?php elseif($date): ?>
+                <li class="concert-date">
+                  <i class="fas fa-calendar-alt fa-fw"></i>
+                  <span><?php echo $date; ?></span>
                 </li>
-              <?php endif; */ ?>
+              <?php endif;  ?>
 
               <!-- Venue -->
               <?php if($hall_name): ?>
@@ -156,7 +167,7 @@ $lng = $hall["address"]["lng"];
             <?php if( $socials["concert_social_spotify"] || $socials["concert_social_soundcloud"] || $socials["concert_social_youtube"]): ?>
               <div class="concert-social">
                 <div class="header">
-                  <h4><?php _e("the artist's universe", 'festivall-bach-understrap'); ?></h4>
+                  <h4><?php _e("the artist's universe", 'festival-bach-understrap'); ?></h4>
                 </div>
                 <ul class="list list-unstyled">
                   <?php if($socials["concert_social_spotify"]): ?>

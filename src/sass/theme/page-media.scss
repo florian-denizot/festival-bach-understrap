@@ -1,5 +1,5 @@
 #media {
-  #media-news, #media-galleries {
+  #media-news .news-card, #media-galleries {
     a {
       text-decoration: none;
       color: $white;
@@ -8,8 +8,48 @@
         background-color: rgba(0, 0, 0, 0.5);
       }
 
+      .news-title h5, .gallery-title h5 {
+        text-shadow: 0 0 8px $black;
+      }
+
       &:hover {
-        text-decoration: underline;
+        .news-title, .gallery-title {
+          background-color: rgba(0, 0, 0, 0.7);
+        }
+      }
+    }
+  }
+
+  .newspaper-carousel {
+    .slick-track {
+      display:flex;
+      align-items: stretch;
+
+      .slick-slide {
+        float: none;
+        align-self: stretch;
+        height: auto;
+
+        & > div  {
+          height: 100%;
+          margin: 0 5px;
+
+          & > div {
+            height: 100%;
+
+            .card {
+              display: flex;
+              height: 100%;
+              flex-direction: column;
+
+              .card-footer{
+                width: 100%;
+                align-self: baseline;
+                margin-bottom: 1rem;
+              }
+            }
+          }
+        }
       }
     }
   }

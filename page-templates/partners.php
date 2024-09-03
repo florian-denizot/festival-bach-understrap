@@ -34,6 +34,12 @@ get_header();
   get_template_part( 'page-templates/partials/partners/partners' );
   ?>
 
+<?php
+  // Other Pages
+  $args = [];
+  get_template_part( 'global-templates/section-other-pages', null, $args);
+  ?>
+
   <?php
   // Newsletter
   get_template_part( 'global-templates/section-newsletter' );

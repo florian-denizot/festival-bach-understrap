@@ -50,7 +50,10 @@ get_header();
 
   <?php
   // Contact
-  get_template_part( 'page-templates/partials/team/contact' );
+  $args = [ 
+    'class' => 'text-bg-light', 
+    'id' => 'team-contact'];
+  get_template_part( 'global-templates/section-contact', null, $args);
   ?>
 
   <?php

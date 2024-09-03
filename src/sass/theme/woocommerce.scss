@@ -1,0 +1,18 @@
+.woocommerce-shop, .woocommerce-page {
+
+  #wrapper-navbar #main-nav{
+    background-color:$black;
+  }
+
+  .widget-area {
+    display: none;
+  }
+
+  .woocommerce-breadcrumb {
+    display: none;
+  }
+
+  #woocommerce-wrapper {
+    margin-top:85px;
+  }
+}

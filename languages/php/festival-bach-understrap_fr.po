@@ -1,0 +1,177 @@
+# Copyright (C) 2024 Florian Denizot
+# This file is distributed under the same license as the Festival Bach Understrap theme.
+msgid ""
+msgstr ""
+"Project-Id-Version: Festival Bach Understrap 1.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/festival-bach-understrap\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-09-03T02:09:54+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: festival-bach-understrap\n"
+
+#. Theme Name of the theme
+#: dist
+msgid "Festival Bach Understrap"
+msgstr "Festival bach understrap"
+
+#. Description of the theme
+#: dist
+msgid "Festival Bach Understrap (Child Theme)"
+msgstr "Festival Bach Understrap (Thème Enfant)"
+
+#. Author of the theme
+#: dist
+msgid "Florian Denizot"
+msgstr "Florian denizot"
+
+#: 404.php:39
+msgid "Page not found"
+msgstr "Page introuvable"
+
+#: 404.php:42
+msgid "Return to the home page"
+msgstr "Retour à la page d'accueil"
+
+#: global-templates/section-contact.php:8
+msgid "Contact"
+msgstr "Contact"
+
+#. Template Name of the theme
+msgid "About"
+msgstr "À propos "
+
+#. Template Name of the theme
+msgid "Artists"
+msgstr "Artistes"
+
+#. Template Name of the theme
+msgid "Donate"
+msgstr "Faire un don"
+
+#. Template Name of the theme
+msgid "FAQ"
+msgstr "FAQ"
+
+#. Template Name of the theme
+msgid "Festivalgoers"
+msgstr "Les Festivaliers"
+
+#. Template Name of the theme
+msgid "Home"
+msgstr "Accueil"
+
+#. Template Name of the theme
+msgid "Media"
+msgstr "Médias"
+
+#. Template Name of the theme
+msgid "Off-Bach"
+msgstr "Off-bach"
+
+#. Template Name of the theme
+msgid "Orchestra and choir"
+msgstr "Orchestre et chœur"
+
+#: page-templates/partials/concert/content.php:56
+msgid "Produced by"
+msgstr "Produit par"
+
+#: page-templates/partials/concert/content.php:62
+msgid "In partnership with"
+msgstr "En partenariat avec"
+
+#: page-templates/partials/concert/content.php:74
+msgid "Evening Program"
+msgstr "Programme du soir"
+
+#: page-templates/partials/concert/content.php:82
+msgid "concert info"
+msgstr "info concert"
+
+#: page-templates/partials/concert/content.php:90
+msgid "and"
+msgstr "et"
+
+#: page-templates/partials/concert/content.php:146
+msgid "from "
+msgstr "de "
+
+#: page-templates/partials/concert/content.php:148
+msgid " to "
+msgstr " à "
+
+#: page-templates/partials/concert/content.php:161
+#: page-templates/partials/program/concert-list.php:65
+msgid "Live available"
+msgstr "Disponible en direct"
+
+#: page-templates/partials/concert/ticket.php:28
+#: page-templates/partials/concert/ticket.php:49
+msgid "Buy your tickets"
+msgstr "Achetez vos billets"
+
+#: page-templates/partials/home/artistic-director.php:33
+#: page-templates/partials/home/news.php:50
+msgid "Read more"
+msgstr "En savoir plus"
+
+#: page-templates/partials/media/section-newspapers.php:42
+msgid "Read the article"
+msgstr "Lire l'article"
+
+#: page-templates/partials/program/concert-list.php:56
+msgid "Free"
+msgstr "Gratuit"
+
+#: page-templates/partials/program/concert-list.php:59
+msgid "Pre-opening"
+msgstr "Pré-ouverture"
+
+#: page-templates/partials/program/concert-list.php:62
+msgid "Full"
+msgstr "Complet"
+
+#: page-templates/partials/program/concert-list.php:98
+msgid "No concert matching your search was found."
+msgstr "Aucun concert correspondant à votre recherche n'a été trouvé."
+
+#: page-templates/partials/program/filters.php:37
+msgid "Filters"
+msgstr "Filtres"
+
+#: page-templates/partials/program/filters.php:48
+msgid "Venue"
+msgstr "Lieu"
+
+#: page-templates/partials/program/filters.php:69
+msgid "Instrument"
+msgstr "Instrument"
+
+#: page-templates/partials/program/filters.php:90
+msgid "Category"
+msgstr "Catégorie"
+
+#: page-templates/partials/program/filters.php:114
+msgid "Filter"
+msgstr "Filtrer"
+
+#. Template Name of the theme
+msgid "Partners"
+msgstr "Partenaires"
+
+#. Template Name of the theme
+msgid "Program"
+msgstr "Programme"
+
+#. Template Name of the theme
+msgid "Team"
+msgstr "L'équipe"
+
+#. Template Name of the theme
+msgid "Volunteers"
+msgstr "Volontaires"

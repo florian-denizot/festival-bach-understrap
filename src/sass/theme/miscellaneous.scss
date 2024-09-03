@@ -1,24 +1,6 @@
-.anchor {
-  scroll-margin-top: 90px;
-}
-
+// Bootstrap overrides
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
-}
-
-
-#artist-modal {
-  .modal-content { 
-    padding: 2rem;
-
-    img {
-      margin-bottom: 2rem;
-    }
-  }
-}
-
-.object-fit-cover {
-  object-fit: cover;
 }
 
 .btn {
@@ -26,8 +8,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+// Common helper classes
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.anchor {
+  scroll-margin-top: 90px;
+}
 
 
+// Classes for background images
 .bg-note-white, .bg-note-red, .bg-note-black {
   background-repeat: no-repeat;
   background-size: 500px;
@@ -47,8 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
-
+// Additional background color classes 
 .text-bg-primary, .text-bg-black {
   .slick-prev::before,
   .slick-next::before,
@@ -77,3 +71,43 @@ h1, h2, h3, h4, h5, h6 {
   background-color: $white;
 }
 
+
+// Underline Transition
+.underline {
+  height: 2px;
+  background-color: $white;
+  width: 0%;
+  @include transition(width 0.8s ease);
+}
+
+.underline.underline-black {
+  background-color: $black;
+}
+
+a:hover .underline{
+  width: 100%;
+}
+
+
+// Artist modal
+#artist-modal {
+  .modal-content { 
+    padding: 2rem;
+
+    img {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+
+// Pages with no header image
+.page-template-default, .error404 {
+  #wrapper-navbar #main-nav{
+    background-color:$black;
+  }
+  
+  #page-wrapper, #error-404-wrapper {
+    margin-top: 85px;
+  }
+}

@@ -11,6 +11,46 @@
 
 }
 
+.artist-card {
+
+  .artist-image{
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: flex-end;
+  }
+
+  a {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+
+    
+
+    &:hover {
+      
+    }
+  }
+
+  .artist-content {
+    padding: 1rem;
+    color: $white;
+    text-shadow: 0 0 5px $black;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    h6 {
+      margin-bottom: 0;
+    }
+
+    .read-more {
+      display: none;
+    }
+  }
+}
+
 .artist-carousel {
   .slick-slide {
 

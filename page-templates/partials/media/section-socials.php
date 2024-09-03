@@ -12,11 +12,11 @@ $youtubeShortcode = $data['youtube_shortcode'];
 
 ?>
 
-<section id="media-socials" class="py-7 anchor">
+<section id="media-socials" class="py-9 anchor">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row">
       <div class="col">
-        <h2 class="mb-4"><?php echo $title; ?></h2>
+        <h2 class="mb-6"><?php echo $title; ?></h2>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
           <!-- <div class="col">
             <ul class="fs-1 list-inline list-unstyled">

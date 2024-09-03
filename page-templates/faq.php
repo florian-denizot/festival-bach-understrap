@@ -35,8 +35,8 @@ get_header();
   ?>
 
   <?php
-  // Other questions
-  get_template_part( 'page-templates/partials/faq/other-questions' );
+  // Contact
+  get_template_part( 'global-templates/section-contact');
   ?>
 
   <?php

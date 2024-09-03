@@ -9,12 +9,12 @@ $title = $data['title'];
 $content = $data['content'];
 ?>
 
-<section id="volunteers-gallery" class="py-7 anchor">
+<section id="volunteers-gallery" class="py-9 anchor">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row">
       <div class="col">
-        <h2 class="mb-4"><?php echo $title; ?></h2>
-        <div class="mb-4"><?php echo $content; ?></div>
+        <h2 class="mb-6"><?php echo $title; ?></h2>
+        <div><?php echo $content; ?></div>
       </div>
     </div>
   </div>

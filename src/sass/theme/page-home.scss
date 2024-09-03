@@ -42,61 +42,32 @@
           background-color: rgba(0, 0, 0, 0.3);
           @include transition(background-color 0.8s ease);
 
-
-          h4 {
-            text-transform: uppercase;
-    
-            .underline {
-              height: 2px;
-              background-color: $white;
-              width: 0%;
-              @include transition(width 0.8s ease);
-            }
-          }
-
-          .concert-infos {
+          .concert-infos  {
             display: none;
           }
           
         }
 
         &:hover {
-          h4 .underline{
-            width: 100%;
-          }
-
           .concert-body {
             background-color: rgba(0, 0, 0, 0.5);
 
             .concert-infos {
-              display: block;
+             display: block;
             }
           }
         }
         
       }
     }
-
-    .concert.calendar-link {
-      a {
-        background-size: contain;
-        background-color: $primary;
-      }
-    }
   }
 
-  #home-artistic-director {
-
+  #home-artistic-director {    
     @include media-breakpoint-down(md) {
-      background-color: $primary; 
-    }
-    
-    .artistic-director-content {
-      columns: 3;
-      text-align: justify;
-    }
-  } 
-
+      color: $white;
+      background-color: $primary;
+    } 
+  }
 
   // Permanent blocks section
   #home-permanent-blocks {

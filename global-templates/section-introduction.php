@@ -14,7 +14,7 @@ if($data && is_array($data) && $data['display_introduction'] ) :
   $image = $data['introduction_image'] ? $data['introduction_image'] : false;
 ?>
 
-<section id="introduction" class="py-5 anchor <?php echo $class; ?>">
+<section id="introduction" class="py-9 anchor <?php echo $class; ?>">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row align-items-stretch gx-0">
       <?php if($image): ?>
@@ -24,8 +24,8 @@ if($data && is_array($data) && $data['display_introduction'] ) :
       <?php endif; ?>
       <div class="<?php echo $image ? 'col-lg-6' : 'col' ?> d-flex align-items-center bg-light">
         <div class="p-md-5">
-          <h2 class="mb-4"><?php echo $title; ?></h2>
-          <div><?php echo $content; ?></div>
+          <h3 class="mb-4"><?php echo $title; ?></h3>
+          <div class="text-justify"><?php echo $content; ?></div>
         </div>
       </div>
     </div>

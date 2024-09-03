@@ -7,11 +7,11 @@ $partners_section_partners = $partners_section["partners"];
 
 <!-- ******************************* Partner section **************************************** -->
 
-<section id="partners" class="py-7 text-bg-black">
+<section id="partners" class="py-9 text-bg-light">
   <div class="container">
     <div class="row">
       <div class="col">
-        <h2><?php echo $partner_heading; ?></h2>
+        <h2 class="mb-6"><?php echo $partner_heading; ?></h2>
         <div class="partner-carousel">
           
           <?php if( $partners_section_partners ): ?>

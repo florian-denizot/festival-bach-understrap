@@ -26,6 +26,7 @@ get_header();
 
 	<?php
 	// News slider section
+	get_template_part( 'page-templates/partials/home/news'); 
 	?>
 
 <?php 

@@ -14,12 +14,12 @@ if( $data ):
 ?>
 
 
-<section id="off-bach-artistic-director" class="py-7 anchor">
+<section id="off-bach-artistic-director" class="py-9 anchor">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row align-items-stretch gx-0">
       <div class="<?php echo $image ? 'col-lg-8' : 'col'; ?> d-flex align-items-center text-bg-primary" >
         <div class="p-md-5">
-          <h2 class="pb-4"><?php echo $title; ?></h2>
+          <h3 class="pb-4"><?php echo $title; ?></h3>
           <div class="mb-4"><?php echo $content; ?></div>
           <div><?php echo nl2br($signature); ?></div>
         </div>

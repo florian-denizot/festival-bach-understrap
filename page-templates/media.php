@@ -35,14 +35,22 @@ get_header();
   ?>
 
   <?php
-  // Socials
- 
-  get_template_part( 'page-templates/partials/media/section-socials' ); 
+  // Quote
+  $args = [
+    'id' => 'media-quote',
+    'quote_class' => 'text-bg-light'
+  ];
+  get_template_part( 'global-templates/section-quote', null, $args); 
   ?>
 
   <?php
   // Newspapers
   get_template_part( 'page-templates/partials/media/section-newspapers' ); 
+  ?>
+
+  <?php
+  // Socials
+  get_template_part( 'page-templates/partials/media/section-socials' ); 
   ?>
 
   <?php
