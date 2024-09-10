@@ -5837,19 +5837,19 @@ textarea.form-control-lg {
   --bs-accordion-inner-border-radius: -1px;
   --bs-accordion-btn-padding-x: 1.25rem;
   --bs-accordion-btn-padding-y: 1rem;
-  --bs-accordion-btn-color: #212529;
-  --bs-accordion-btn-bg: var(--bs-accordion-bg);
-  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-color: white;
+  --bs-accordion-btn-bg: #e9121b;
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   --bs-accordion-btn-icon-width: 1.25rem;
   --bs-accordion-btn-icon-transform: rotate(-180deg);
   --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
-  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23d21018'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   --bs-accordion-btn-focus-border-color: #f4898d;
   --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(233, 18, 27, 0.25);
   --bs-accordion-body-padding-x: 1.25rem;
   --bs-accordion-body-padding-y: 1rem;
-  --bs-accordion-active-color: #d21018;
-  --bs-accordion-active-bg: #fde7e8;
+  --bs-accordion-active-color: white;
+  --bs-accordion-active-bg: #ba0e16;
 }
 
 .accordion-button {
@@ -18008,6 +18008,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .recent-posts-widget-with-thumbnails .rp
   object-fit: cover;
 }
 
+.object-fit-contain {
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
 .text-justify {
   text-align: justify;
 }
@@ -18016,7 +18021,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .recent-posts-widget-with-thumbnails .rp
   scroll-margin-top: 90px;
 }
 
-.bg-note-white, .bg-note-red, .bg-note-black {
+.bg-note-white, .bg-note-red, .bg-note-black,
+.bg-b-lines-white, .bg-b-lines-red, .bg-b-lines-black {
   background-repeat: no-repeat;
   background-size: 500px;
   background-position-x: right;
@@ -18032,6 +18038,18 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .recent-posts-widget-with-thumbnails .rp
 
 .bg-note-black {
   background-image: url("./../images/note-black.png");
+}
+
+.bg-b-lines-white {
+  background-image: url("./../images/b-lines-white-transparent.png");
+}
+
+.bg-b-lines-red {
+  background-image: url("./../images/b-lines-red-transparent.png");
+}
+
+.bg-b-lines-black {
+  background-image: url("./../images/b-lines-black-transparent.png");
 }
 
 .text-bg-primary .slick-prev::before,
@@ -18104,6 +18122,20 @@ a:hover .underline {
   width: auto;
   margin: 5px 0;
 }
+#wrapper-topbar .topbar-right {
+  display: flex;
+  -moz-column-gap: 1em;
+  column-gap: 1em;
+  padding-right: 1.5rem;
+}
+#wrapper-topbar .topbar-right a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+#wrapper-topbar .topbar-right a:hover {
+  color: #e9121b;
+}
 #wrapper-topbar ul.social-buttons-horizontal {
   list-style-type: none;
   display: inline-block;
@@ -18114,20 +18146,21 @@ a:hover .underline {
   display: inline-block;
   margin-right: 5px;
 }
-#wrapper-topbar ul.social-buttons-horizontal li a {
-  color: #000;
-}
-#wrapper-topbar ul.social-buttons-horizontal li a:hover {
-  color: #e9121b;
-}
 #wrapper-topbar .wpml-ls-legacy-list-horizontal {
   border: none;
-  padding: none;
-  margin-left: 10px;
+  padding: 0;
 }
 #wrapper-topbar .wpml-ls-legacy-list-horizontal a {
   padding: 0;
-  font-weight: 700;
+}
+#wrapper-topbar .widget_nav_menu ul.menu {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+#wrapper-topbar .widget_nav_menu ul.menu > li {
+  padding: 0 0.5rem;
 }
 
 /************************************* Navbar **************************************/
@@ -18363,11 +18396,17 @@ a:hover .underline {
 #home #home-upcoming-events .concert a:hover .concert-body .concert-infos {
   display: block;
 }
-@media (max-width: 767.98px) {
-  #home #home-artistic-director {
-    color: #fff;
-    background-color: #e9121b;
-  }
+#home #home-artistic-director a[aria-expanded=true] .opened {
+  display: none;
+}
+#home #home-artistic-director a[aria-expanded=true] .closed {
+  display: inline;
+}
+#home #home-artistic-director a[aria-expanded=false] .opened {
+  display: inline;
+}
+#home #home-artistic-director a[aria-expanded=false] .closed {
+  display: none;
 }
 #home #home-permanent-blocks .grid .block {
   grid-column: 1/13;
@@ -18466,18 +18505,23 @@ a:hover .underline {
 }
 @media (min-width: 1400px) {
   #home #home-permanent-blocks .grid {
-    grid-template-rows: 160px 80px 80px 160px 160px;
+    grid-template-rows: 200px 100px 100px 200px 200px;
   }
 }
 
-#about dl.timeline {
+#about #about-history {
+  background-size: 500px;
+  background-position-x: 10%;
+  background-position-y: 90%;
+}
+#about #about-history dl.timeline {
   margin: 5px;
   padding-left: 20px;
   padding-bottom: 20px;
   position: relative;
   border-left: 3px solid #000;
 }
-#about dl.timeline dt::before {
+#about #about-history dl.timeline dt::before {
   content: "\f111";
   font-family: "Font Awesome 5 Pro";
   color: #e9121b;
@@ -18485,7 +18529,7 @@ a:hover .underline {
   left: -11px;
   z-index: 2;
 }
-#about dl.timeline::after {
+#about #about-history dl.timeline::after {
   content: "\f063";
   font-family: "Font Awesome 5 Pro";
   position: absolute;
@@ -18499,15 +18543,12 @@ a:hover .underline {
   color: #fff;
   padding: 2rem;
 }
+#about #about-values {
+  background-size: 400px;
+  background-position-x: 90%;
+  background-position-y: 20%;
+}
 
-#off-bach #off-bach-infos {
-  background-color: #000;
-  color: #fff;
-}
-#off-bach #off-bach-artistic-director img {
-  -o-object-fit: cover;
-  object-fit: cover;
-}
 @media (max-width: 767.98px) {
   #off-bach #off-bach-artistic-director {
     background-color: #e9121b;
@@ -18519,6 +18560,11 @@ a:hover .underline {
 }
 #artists #artists-invited h2, #artists #artists-invited .h2 {
   text-align: end;
+}
+#artists #artists-gallery {
+  background-size: 200px;
+  background-position-x: 2%;
+  background-position-y: 70%;
 }
 
 .artist-card .artist-image {
@@ -18572,6 +18618,16 @@ a:hover .underline {
   height: 100%;
 }
 
+#orchestra #orchestra-history {
+  background-size: 400px;
+  background-position-x: 10%;
+  background-position-y: 80%;
+}
+#orchestra #orchestra-voice-artists {
+  background-size: 600px;
+  background-position-x: 100%;
+  background-position-y: 20%;
+}
 #orchestra .artist-card .artist-image {
   height: 100%;
   background-size: cover;
@@ -18669,6 +18725,17 @@ a:hover .underline {
   display: none;
 }
 
+#festivalgoers #festivalgoers-discover {
+  background-size: 600px;
+  background-position-x: -15%;
+  background-position-y: 108%;
+}
+
+#volunteers #volunteers-gallery {
+  background-size: 500px;
+  background-position-x: 100%;
+  background-position-y: 98%;
+}
 #volunteers .wpcf7 {
   margin: 0 0 !important;
   max-width: none;
@@ -18697,7 +18764,7 @@ a:hover .underline {
   background-image: url("./../images/b-lines-black-transparent.png");
   background-repeat: no-repeat;
   background-position: -10%;
-  background-size: auto 80%;
+  background-size: auto 60%;
 }
 
 #program #concerts .card {

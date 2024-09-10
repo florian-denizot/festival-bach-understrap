@@ -7,8 +7,8 @@ $data = get_field('testimonies');
 
 $title = $data['title'];
 $content = $data['testimonies'];
+if(is_array($content) && count($content)):
 ?>
-
 <section id="volunteers-testimonies" class="py-9 anchor text-bg-black">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row">
@@ -29,3 +29,4 @@ $content = $data['testimonies'];
     </div>
   </div>
 </section>
+<?php endif; ?>

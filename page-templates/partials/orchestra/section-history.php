@@ -11,7 +11,7 @@ $events = $data['events'];
 if($events && is_array( $events ) && count( $events ) > 0) :
 ?>
 
-<section id="orchestra-history" class="py-9 anchor text-bg-black">
+<section id="orchestra-history" class="py-9 anchor text-bg-black bg-b-lines-white">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row">
       <div class="col">

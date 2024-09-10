@@ -10,7 +10,7 @@ $class = isset($args['class']) ? $args['class'] : '';
 $id = isset($args['id']) ? $args['id'] : '';
 ?>
 
-<section id="<?php echo $id; ?>" class="py-9 anchor <?php echo $class; ?>">
+<section id="<?php echo $id; ?>" class="py-9 anchor <?php echo $class; ?> bg-b-lines-black">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row">
       <div class="col">

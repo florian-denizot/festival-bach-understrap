@@ -13,7 +13,7 @@ if( $data ):
 
 ?>
 
-<section id="off-bach-infos" class="py-9 anchor text-bg-light">
+<section id="off-bach-infos" class="py-9 anchor">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row">
       <div class="col">

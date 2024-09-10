@@ -12,7 +12,7 @@ $title = $data['title'];
 $photos = $data['photos'];
 ?>
 
-<section id="artists-gallery" class="py-9 anchor">
+<section id="artists-gallery" class="py-9 anchor bg-b-lines-red">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row">
       <div class="col">

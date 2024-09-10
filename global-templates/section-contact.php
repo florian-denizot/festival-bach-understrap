@@ -29,7 +29,7 @@ $titleRight = isset($args['title_right']) && $args['title_right'] ? true : false
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row">
       <div class="col">
-        <h2 class="mb-6 <?php echo $titleRight ? 'text-end' : ''?>"><?php echo $title; ?></h2>
+        <h2 class="mb-6 text-primary <?php echo $titleRight ? 'text-end' : ''?>"><?php echo $title; ?></h2>
         <div class="row">
           <div class="col-12 col-lg-6 mb-4">
             <?php echo do_shortcode('[contact-form-7 id="'. $form[0]->ID .'"]'); ?>

@@ -2,7 +2,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 $artists = isset($args['artists']) && is_array($args['artists']) && count($args['artists']) ? $args['artists'] : false;
-$rowClass =  isset($args['rowClass']) && !empty($args['rowClass']) ? $args['rowClass'] : 'row-cols-2 row-cols-sm-3 row-cols-lg-5';
+$rowClass =  isset($args['rowClass']) && !empty($args['rowClass']) ? $args['rowClass'] : 'row-cols-2 row-cols-sm-3 row-cols-lg-5 mb-5';
 $imageRatio =  isset($args['imageRatio']) && !empty($args['imageRatio']) ? $args['imageRatio'] : 'ratio-3x4';
 ?>
 <?php if($artists): ?>

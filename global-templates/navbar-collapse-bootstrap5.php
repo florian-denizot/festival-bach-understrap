@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark " aria-labelledby="main-nav-label">
+<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark" aria-labelledby="main-nav-label">
 	<div class="nav-overlay" style="opacity: 0.4;"></div>
 
 	<h2 id="main-nav-label" class="screen-reader-text">
@@ -85,7 +85,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					'theme_location'  => 'primary',
 					'container_class' => 'offcanvas-body',
 					'container_id'    => '',
-					'menu_class'      => 'navbar-nav justify-content-end flex-grow-1 pe-3',
+					'menu_class'      => 'navbar-nav justify-content-end flex-grow-1',
 					'fallback_cb'     => '',
 					'menu_id'         => 'main-menu',
 					'depth'           => 2,

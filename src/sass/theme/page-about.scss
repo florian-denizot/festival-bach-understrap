@@ -1,29 +1,34 @@
 #about {
-  
-  dl.timeline{
-    margin: 5px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    position: relative;
-    border-left: 3px solid  $black;
+  #about-history {
+    background-size: 500px;
+    background-position-x: 10%;
+    background-position-y: 90%;
 
-    dt::before {
-      content: "\f111";
-      font-family: 'Font Awesome 5 Pro';
-      color: $primary;
-      position: absolute;
-      left: -11px;
-      z-index: 2;
-    }
+    dl.timeline{
+      margin: 5px;
+      padding-left: 20px;
+      padding-bottom: 20px;
+      position: relative;
+      border-left: 3px solid  $black;
 
-    &::after {
-      content: "\f063";
-      font-family: 'Font Awesome 5 Pro';
-      position: absolute;
-      left: -14px;
-      z-index: 2;
-      font-size: 29px;
-      color: $black;
+      dt::before {
+        content: "\f111";
+        font-family: 'Font Awesome 5 Pro';
+        color: $primary;
+        position: absolute;
+        left: -11px;
+        z-index: 2;
+      }
+
+      &::after {
+        content: "\f063";
+        font-family: 'Font Awesome 5 Pro';
+        position: absolute;
+        left: -14px;
+        z-index: 2;
+        font-size: 29px;
+        color: $black;
+      }
     }
   }
 
@@ -33,5 +38,11 @@
       color: $white;
       padding: 2rem;
     }
+  }
+
+  #about-values {
+    background-size: 400px;
+    background-position-x: 90%;
+    background-position-y: 20%;
   }
 }

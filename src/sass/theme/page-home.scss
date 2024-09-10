@@ -63,10 +63,23 @@
   }
 
   #home-artistic-director {    
-    @include media-breakpoint-down(md) {
-      color: $white;
-      background-color: $primary;
-    } 
+    a[aria-expanded="true"] {
+      .opened {
+        display: none;
+      }
+      .closed{
+        display: inline;
+      }
+    }
+
+    a[aria-expanded="false"] {
+      .opened {
+        display: inline;
+      }
+      .closed{
+        display: none;
+      }
+    }
   }
 
   // Permanent blocks section
@@ -178,7 +191,7 @@
       }
   
       @include media-breakpoint-up(xxl) {
-        grid-template-rows: 160px 80px 80px 160px 160px;
+        grid-template-rows: 200px 100px 100px 200px 200px;
       }
     } 
   }

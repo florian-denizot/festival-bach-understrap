@@ -41,13 +41,13 @@ get_header();
 
   <?php
   // Contact
-  get_template_part( 'global-templates/section-contact');
+  $args = [ 'id' => 'volunteers-contact'];
+  get_template_part( 'global-templates/section-contact', null, $args);
   ?>
 
   <?php
   // Partners
-  $args = [ 
-    'id' => 'volunteers-contact'];
+  
   get_template_part( 'global-templates/section-partners' );
   ?>
 

@@ -365,7 +365,7 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 			'id'            => 'topbarleft',
 			'name'          => __( 'Top bar left', 'understrap' ),
 			'description'   => __( 'Top bar left widget area', 'understrap' ),
-			'before_widget' => '<div id="%1$s class="%2$s topbar-left-widget">',
+			'before_widget' => '<div id="%1$s" class="%2$s topbar-left-widget">',
 			'after_widget'  => '</div><!-- .topbar-left-widget -->',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
@@ -375,18 +375,8 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 			'id'            => 'topbarright',
 			'name'          => __( 'Top bar right', 'understrap' ),
 			'description'   => __( 'Top bar right widget area', 'understrap' ),
-			'before_widget' => '<div id="%1$s class="%2$s topbar-right-widget">',
+			'before_widget' => '<div id="%1$s" class="%2$s topbar-right-widget">',
 			'after_widget'  => '</div><!-- .topbar-right-widget -->',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		) );
-
-		register_sidebar( array(
-			'id'            => 'topbarcenter',
-			'name'          => __( 'Top bar center', 'understrap' ),
-			'description'   => __( 'Top bar center widget area', 'understrap' ),
-			'before_widget' => '<div id="%1$s class="%2$s topbar-center-widget">',
-			'after_widget'  => '</div><!-- .topbar-center-widget -->',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		) );

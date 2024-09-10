@@ -13,6 +13,10 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: cover;
 }
 
+.object-fit-contain {
+  object-fit: contain;
+}
+
 .text-justify {
   text-align: justify;
 }
@@ -23,7 +27,8 @@ h1, h2, h3, h4, h5, h6 {
 
 
 // Classes for background images
-.bg-note-white, .bg-note-red, .bg-note-black {
+.bg-note-white, .bg-note-red, .bg-note-black, 
+.bg-b-lines-white, .bg-b-lines-red, .bg-b-lines-black{
   background-repeat: no-repeat;
   background-size: 500px;
   background-position-x: right; 
@@ -39,6 +44,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .bg-note-black {
   background-image: url('./../images/note-black.png');
+}
+
+.bg-b-lines-white {
+  background-image: url('./../images/b-lines-white-transparent.png');
+}
+
+.bg-b-lines-red {
+  background-image: url('./../images/b-lines-red-transparent.png');
+}
+
+.bg-b-lines-black {
+  background-image: url('./../images/b-lines-black-transparent.png');
 }
 
 

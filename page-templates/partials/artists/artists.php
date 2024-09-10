@@ -11,17 +11,15 @@ $artists = $data['artists'];
 $id = isset($args['id']) ? $args['id'] : 'artists-artists';
 $class = isset($args['class']) ? $args['class'] : '';
 ?>
-
+<?php if($artists && is_array($artists) && count($artists)): ?>
 <section id="<?php echo $id; ?>" class="py-9 anchor <?php echo $class; ?>">
   <div class="<?php echo esc_attr( $container ); ?>" tabindex="-1">
     <div class="row">
       <div class="col">
+        
         <h2 class="mb-6"><?php echo $title; ?></h2>
-        
-        
-        <?php if($artists && is_array($artists) && count($artists)): ?>
 
-          <div class="artist-carousel">    
+        <div class="artist-carousel">    
 
           <?php foreach($artists as $entry): ?>
             
@@ -61,9 +59,10 @@ $class = isset($args['class']) ? $args['class'] : '';
 
           <?php endforeach; ?>
 
-          </div>
-        <?php endif; ?>
+        </div>
+        
       </div>
     </div>
   </div>
 </section>
+<?php endif; ?>

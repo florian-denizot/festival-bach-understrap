@@ -30,6 +30,11 @@ $are_concerts_date_equal = (date('d F Y', strtotime($temp_1)) == date('d F Y', s
 
 
 $price = $concert["concert_price"];
+
+$concert_tickets = $concert["concert_tickets"];
+$concert_tickets_indoor_link = $concert["concert_tickets"]["concert_ticket_indoor"]["concert_ticket_indoor_link"];
+$concert_tickets_online_link = $concert["concert_tickets"]["concert_ticket_online"]["concert_ticket_online_link"];
+
 $is_live = $concert["concert_is_live"];
 $hall = get_field("hall", $concert["concert_hall"][0]);
 $socials = $concert["concert_socials"];
@@ -44,6 +49,7 @@ $hall_address_address = $hall["address"]["address"];
 $lat = $hall["address"]["lat"];
 $lng = $hall["address"]["lng"];
 
+$sponsors = $concert['concert_sponsors'];
 ?>
 
 <section id="concert-main" class="py-7">
@@ -198,6 +204,26 @@ $lng = $hall["address"]["lng"];
               </div>
             <?php endif; ?>
 
+            <!-- Buy ticket button -->
+            <?php if($concert_tickets_indoor_link || $concert_tickets_online_link): ?>
+              <div class="mb-4">
+                <?php if($concert_tickets_indoor_link): ?>
+                  <a class="btn btn-primary btn-lg" 
+                      href="<?php echo $concert_tickets_indoor_link ?>" 
+                      target="_blank">
+                <?php _e("Buy your tickets", 'festival-bach-understrap'); ?>
+                  </a>
+                <?php endif; ?>
+
+                <?php if($concert_tickets_online_link): ?>
+                  <a class="btn btn-primary btn-lg" 
+                      href="<?php echo $concert_tickets_online_link ?>" 
+                      target="_blank">
+                    <?php _e("Buy your tickets", 'festival-bach-understrap'); ?>  
+                  </a>
+                <?php endif; ?>
+              </div>
+            <?php endif; ?>
           </div>
 
           <!-- Google Maps -->
@@ -210,6 +236,39 @@ $lng = $hall["address"]["lng"];
             </div>
           <?php endif; ?>
 
+          <!-- Sponsors -->
+          <?php if($sponsors && is_array($sponsors) && count($sponsors)): ?>
+            <div class="px-md-4 pt-3">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-1 row-cols-lg-2 g-3">
+              <?php foreach($sponsors as $sponsor): ?>
+                <div class="col">
+                  <div class="border h-100">
+                    <?php if(isset($sponsor['concert_sponsor_link']) && !empty($sponsor['concert_sponsor_link'])): ?>
+                      <a href="<?php echo esc_url($sponsor['concert_sponsor_link']); ?>" target="_blank">
+                    <?php endif; ?>
+
+                    <?php if(isset($sponsor['concert_sponsor_logo']) && isset($sponsor['concert_sponsor_logo']['url'])): ?>
+                      <div class="mb-3 p-4 bg-white">
+                        <div class="ratio ratio-4x3 ">
+                          <img src="<?php echo esc_url($sponsor['concert_sponsor_logo']['url']); ?>"
+                              alt="<?php echo esc_url($sponsor['concert_sponsor_logo']['alt']); ?>"
+                              class=" w-100 h-100 object-fit-contain"/>
+                        </div>
+                      </div>
+                    <?php endif; ?>
+
+                    <?php if(isset($sponsor['concert_sponsor_link']) && !empty($sponsor['concert_sponsor_link'])): ?>
+                    </a>
+                    <?php endif; ?>
+
+                    <?php if(isset($sponsor['concert_sponsor_content']) && !empty($sponsor['concert_sponsor_content'])): ?>
+                      <div class="mx-3"><?php echo $sponsor['concert_sponsor_content']; ?></div>
+                    <?php endif; ?>
+                  </div>
+                </div>
+              <?php endforeach ?>
+            </div>
+          <?php endif; ?>
         </div>
       </div>
 

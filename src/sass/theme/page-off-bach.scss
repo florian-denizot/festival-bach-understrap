@@ -1,14 +1,6 @@
 #off-bach {
 
-  #off-bach-infos {
-    background-color: $black;
-    color: $white;
-  }
-
   #off-bach-artistic-director {
-    img {
-      object-fit: cover;
-    }
 
     @include media-breakpoint-down(md) {
       background-color: $primary; 
