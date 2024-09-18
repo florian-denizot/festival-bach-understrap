@@ -18349,6 +18349,26 @@ a:hover .underline {
   text-shadow: 0 0 5px #000;
 }
 
+/********************************** Sidebar *********************************/
+@media (min-width: 768px) {
+  #right-sidebar .widget {
+    margin-left: 1.5rem;
+  }
+}
+.rpwwt-widget ul li a {
+  color: #000;
+  text-decoration: none;
+}
+.rpwwt-widget ul li a:hover {
+  text-decoration: underline;
+}
+.rpwwt-widget ul li a img {
+  margin: 0 0 0.5rem 0;
+}
+.rpwwt-widget ul li a .rpwwt-post-title {
+  font-size: 1.2rem;
+}
+
 #home #home-program {
   background-size: cover;
   background-position-y: 30%;

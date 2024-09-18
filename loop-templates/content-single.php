@@ -15,16 +15,16 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php
 		the_content();
-		understrap_link_pages();
+		//understrap_link_pages();
 		?>
 
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 
-		<div class="entry-meta mb-3">
-			<small><?php understrap_posted_on(); ?></small>
-		</div><!-- .entry-meta -->
+		<!--<div class="entry-meta mb-3">
+			<small><?php //understrap_posted_on(); ?></small>
+		</div>--><!-- .entry-meta -->
 
 		<?php understrap_entry_footer(); ?>
 
