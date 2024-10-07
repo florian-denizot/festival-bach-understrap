@@ -9,6 +9,7 @@ $title = $data['title'];
 // $icons = $data['icons'];
 $instaShortcode = $data['instagram_shortcode'];
 $youtubeShortcode = $data['youtube_shortcode'];
+$facebookShortcode = $data['facebook_shortcode'];
 
 ?>
 
@@ -42,6 +43,12 @@ $youtubeShortcode = $data['youtube_shortcode'];
               <i class="fab fa-youtube" aria-hidden="true"></i> Youtube
             </h3>
             <?php echo do_shortcode($youtubeShortcode); ?>
+          </div>
+          <div class="col">
+            <h3 class="text-center">
+              <i class="fab fa-facebook" aria-hidden="true"></i> Facebook
+            </h3>
+            <?php echo do_shortcode($facebookShortcode); ?>
           </div>
         </div>
       </div>

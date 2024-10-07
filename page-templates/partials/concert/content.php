@@ -14,17 +14,16 @@ $description = $concert["concert_description"];
 
 $instruments = get_the_terms($id, "instruments");
 $has_different_dates = $concert["has_different_dates"];
+
 // concert date format
-// $date = (new DateTime(str_replace("/", "-",$concert["concert_date_time"])))->format('F d, Y H:i');
-$date = (new DateTime(str_replace("/", "-", $concert["concert_date_time"])))->format(get_option('date_format') . ' - ' . get_option('time_format'));
+$date = (new DateTime(str_replace("/", "-", $concert["concert_date_time"])))->format('F d, Y g:i a');
 $temp_1 = $date;
+$date = (ICL_LANGUAGE_CODE == "fr" ? dateToFrench2($date, 'd F Y - G:i') : $date );
 
-
-// $date = (ICL_LANGUAGE_CODE == "fr" ? dateToFrench2($date, 'd F Y - H:i') : $date );
-// $date_2 = (new DateTime(str_replace("/", "-",$concert["concert_date_time_2"])))->format('d F Y H:i');
-$date_2 = (new DateTime(str_replace("/", "-", $concert["concert_date_time_2"])))->format(get_option('date_format') . ' - ' . get_option('time_format'));
+$date_2 = (new DateTime(str_replace("/", "-", $concert["concert_date_time_2"])))->format('F d, Y g:i a');
 $temp_2 = $date_2;
-// $date_2 = (ICL_LANGUAGE_CODE == "fr" ? dateToFrench2($date_2, 'd F Y - H:i') : $date_2 );
+$date_2 = (ICL_LANGUAGE_CODE == "fr" ? dateToFrench2($date_2, 'd F Y - G:i') : $date_2 );
+
 $are_concerts_date_time_equal = (date('d F Y H:i', strtotime($temp_1)) == date('d F Y H:i', strtotime($temp_2)) ) ? true : false;
 $are_concerts_date_equal = (date('d F Y', strtotime($temp_1)) == date('d F Y', strtotime($temp_2)) ) ? true : false;
 
@@ -149,9 +148,9 @@ $sponsors = $concert['concert_sponsors'];
                       <?php echo $price["concert_price_fixed_price"]; ?> $
                     <?php else: ?> 
                       <?php 
-                      echo __("from ", 'festival-bach-understrap') . 
-                        $price["concert_price_variabel_price"]["minimum_price"] . 
-                        __(" to ", 'festival-bach-understrap') . 
+                      echo __("from", 'festival-bach-understrap') . ' ' .
+                        $price["concert_price_variabel_price"]["minimum_price"] . ' ' .
+                        __("to", 'festival-bach-understrap') . ' ' .
                         $price["concert_price_variabel_price"]["maximum_price"] . 
                         "$"; 
                       ?>
@@ -275,3 +274,15 @@ $sponsors = $concert['concert_sponsors'];
     </div>
   </div>
 </section>
+
+<?php
+// Convert a date or timestamp into French.
+function dateToFrench2($date, $format)
+{
+    $english_days = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
+    $french_days = array('lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche');
+    $english_months = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+    $french_months = array('janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre');
+    return str_replace($english_months, $french_months, str_replace($english_days, $french_days, date($format, strtotime($date) ) ) );
+}
+?>
