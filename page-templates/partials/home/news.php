@@ -24,7 +24,13 @@ if($display && $posts && is_array( $posts ) && count( $posts ) > 0) :
         <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
           
           <?php foreach($posts as $posto): ?>
-            <?php $posto = get_post($posto); ?>
+            
+            <?php if(apply_filters( 'wpml_object_id', $posto, 'post')): ?>
+              <?php $posto = get_post(apply_filters( 'wpml_object_id', $posto, 'post')); ?>
+            <?php else: ?>
+              <?php $posto = get_post($posto); ?>
+            <?php endif; ?>
+
             <?php $excerpt = get_excerpt_from_text($posto->post_content, 35); ?>
             <?php if (has_post_thumbnail( $posto->ID ) ): ?>
               <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $posto->ID ), 'single-post-thumbnail' ); ?>

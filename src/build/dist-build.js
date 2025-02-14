@@ -10,6 +10,7 @@ async function copyDir(src, dest) {
 		'dist',
 		'src',
 		'vendor',
+		'.git',
 		'.github',
 		'.browserslistrc',
 		'.editorconfig',
