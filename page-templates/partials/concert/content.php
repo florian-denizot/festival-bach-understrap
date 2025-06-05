@@ -40,6 +40,7 @@ $socials = $concert["concert_socials"];
 $program_url = $concert["program"];
 $produit_par = $concert["produit_par"];
 $en_partenariat_avec = $concert["en_partenariat_avec"];
+$playlist = isset($concert["concert_playlist_url"]) && !empty($concert["concert_playlist_url"]) ? $concert["concert_playlist_url"] : null;
 
 $hall = get_field("hall", $concert["concert_hall"][0]);
 $hall_name = $hall["name"];
@@ -169,7 +170,8 @@ $sponsors = $concert['concert_sponsors'];
             </ul>
             
             <!-- Socials -->
-            <?php if( $socials["concert_social_spotify"] || $socials["concert_social_soundcloud"] || $socials["concert_social_youtube"] ||  $socials["concert_social_website"]): ?>
+            <?php if( $socials["concert_social_spotify"] || $socials["concert_social_soundcloud"] || $socials["concert_social_youtube"] ||  
+                      $socials["concert_social_website"] || $playlist !== null): ?>
               <div class="concert-social">
                 <div class="header">
                   <h4><?php _e("the artist's universe", 'festival-bach-understrap'); ?></h4>
@@ -209,14 +211,25 @@ $sponsors = $concert['concert_sponsors'];
                   <?php endif; ?>
                 </ul>
               </div>
+
+              <!-- Playlist -->
+              <?php if($playlist !== null): ?>
+
+                <iframe
+                  src="<?php echo $playlist; ?>"
+                  width="100%"
+                  height="300"
+                  class="concert-playlist mb-4">
+                  <p>Your browser does not support iframes.</p>
+                </iframe>
+              <?php endif; ?>
+              <!-- End playlist -->
             <?php endif; ?>
 
 
-            <!-- Playlist -->
-             
-            <!-- End playlist -->
-
             
+
+
             <!-- Buy ticket button -->
             <?php if($concert_tickets_indoor_link || $concert_tickets_online_link): ?>
               <div class="mb-4">
