@@ -21,6 +21,40 @@ defined( 'ABSPATH' ) || exit;
 
         <h3 id="artist-modal-name"></h3>
         <div id="artist-modal-bio"></div>
+        <ul class="list-inline mt-3 fs-6">
+          <li class="list-inline-item" id="artist-modal-youtube">
+            <a target="_blank">
+              <span class="fa-stack">
+                <i class="fas fa-square fa-stack-2x"></i>
+                <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item" id="artist-modal-soundcloud">
+            <a target="_blank">
+              <span class="fa-stack">
+                <i class="fas fa-square fa-stack-2x"></i>
+                <i class="fab fa-soundcloud fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item" id="artist-modal-spotify">
+            <a target="_blank">
+              <span class="fa-stack">
+                <i class="fas fa-square fa-stack-2x"></i>
+                <i class="fab fa-spotify fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item" id="artist-modal-website">
+            <a target="_blank">
+              <span class="fa-stack">
+                <i class="fas fa-square fa-stack-2x"></i>
+                <i class="fas fa-link fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
 
       </div>
     </div>

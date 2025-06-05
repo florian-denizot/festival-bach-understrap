@@ -100,3 +100,23 @@ add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_co
  * Remove prefix from page title
  */
 add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+
+/**
+ * Get the WPML language shortcode
+ * @return mixed
+ */
+function get_language_shortcode() {
+	return apply_filters( 'wpml_current_language', null );
+}
+add_shortcode( 'language', 'get_language_shortcode' );
+
+
+/**
+ * Set Google API Key for ACF
+ **/
+function my_acf_init() {
+    
+    acf_update_setting('google_api_key', 'AIzaSyBONcGXtjAQsu7r-u6BmnmktTZeG5_gwDc');
+}
+
+add_action('acf/init', 'my_acf_init');

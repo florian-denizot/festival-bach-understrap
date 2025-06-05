@@ -169,7 +169,7 @@ $sponsors = $concert['concert_sponsors'];
             </ul>
             
             <!-- Socials -->
-            <?php if( $socials["concert_social_spotify"] || $socials["concert_social_soundcloud"] || $socials["concert_social_youtube"]): ?>
+            <?php if( $socials["concert_social_spotify"] || $socials["concert_social_soundcloud"] || $socials["concert_social_youtube"] ||  $socials["concert_social_website"]): ?>
               <div class="concert-social">
                 <div class="header">
                   <h4><?php _e("the artist's universe", 'festival-bach-understrap'); ?></h4>
@@ -199,10 +199,24 @@ $sponsors = $concert['concert_sponsors'];
                       </a>
                     </li>
                   <?php endif; ?>
+				          <?php if($socials["concert_social_website"]): ?>
+                    <li class="d-flex align-items-center">
+                      <a href="<?php echo $socials["concert_social_website"];?>" target="_blank" class="link-dark"> 
+                        <i class="fas fa-link"></i>
+                        <span class=""> <?php _e("Website", 'festival-bach-understrap'); ?></span>
+                      </a>
+                    </li>
+                  <?php endif; ?>
                 </ul>
               </div>
             <?php endif; ?>
 
+
+            <!-- Playlist -->
+             
+            <!-- End playlist -->
+
+            
             <!-- Buy ticket button -->
             <?php if($concert_tickets_indoor_link || $concert_tickets_online_link): ?>
               <div class="mb-4">

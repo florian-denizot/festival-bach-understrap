@@ -14,7 +14,25 @@ $imageRatio =  isset($args['imageRatio']) && !empty($args['imageRatio']) ? $args
       <?php $artist = get_field("artist", intval($entry)); ?>
       <?php $image = $artist['image']; ?>
       <?php $name = $artist['name']; ?>
-      <?php $description = $artist['description'];; ?>
+      <?php $description = $artist['description']; ?>
+      <?php
+      $youtube = false;
+      $spotify = false;
+      $soundcloud = false;
+      $website = false;
+      $socials = isset($artist['socials']) && is_array($artist['socials']) && count($artist['socials']) ? $artist['socials'] : false;
+      if($socials && count($socials)) :
+        foreach($socials as $social) :
+          switch($social['name']):
+            case 'youtube': $youtube = $social['link']; break;
+            case 'spotify': $spotify = $social['link']; break;
+            case 'soundcloud': $soundcloud = $social['link']; break;
+            case 'website': $website = $social['link']; break;
+          endswitch;
+        endforeach;
+      endif;
+      ?>
+
 
       <?php if( $artist && is_array($artist) ): ?>
         <?php if( $artist['image'] && is_array($artist['image']) && $artist['image']['url'] ): ?>
@@ -30,7 +48,11 @@ $imageRatio =  isset($args['imageRatio']) && !empty($args['imageRatio']) ? $args
                       data-bs-toggle="modal" 
                       data-bs-name="<?php echo $artist['name']; ?>"
                       data-bs-image="<?php echo esc_url($artist['image']['url']); ?>"
-                      data-bs-bio="<?php echo esc_html($artist['description']); ?>">
+                      data-bs-bio="<?php echo esc_html($artist['description']); ?>"
+                      data-bs-youtube="<?php echo $youtube; ?>"
+                      data-bs-spotify="<?php echo $spotify; ?>"
+                      data-bs-soundcloud="<?php echo $soundcloud; ?>"
+                      data-bs-website="<?php echo $website; ?>">
                 <?php endif; ?>
                 <div class="artist-image" style="background-image:url('<?php echo esc_url($artist['image']['url']); ?>')">
 

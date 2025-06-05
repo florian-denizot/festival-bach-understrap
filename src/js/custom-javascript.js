@@ -224,15 +224,57 @@ if (artistModal) {
     const name = button.getAttribute('data-bs-name');
     const image = button.getAttribute('data-bs-image');
     const bio = button.getAttribute('data-bs-bio');
+    const youtube = button.getAttribute('data-bs-youtube');
+    const soundcloud = button.getAttribute('data-bs-soundcloud');
+    const spotify = button.getAttribute('data-bs-spotify');
+    const website = button.getAttribute('data-bs-website');
 
     // Update the modal's content.
     const modalTitle = artistModal.querySelector('#artist-modal-name');
     const modalImage = artistModal.querySelector('#artist-modal-image');
     const modalBio = artistModal.querySelector('#artist-modal-bio');
+    const modalYoutube = artistModal.querySelector('#artist-modal-youtube');
+    const aYoutube = artistModal.querySelector('#artist-modal-youtube>a');
+    const modalSoundcloud = artistModal.querySelector('#artist-modal-soundcloud');
+    const aSoundcloud = artistModal.querySelector('#artist-modal-soundcloud>a');
+    const modalSpotify = artistModal.querySelector('#artist-modal-spotify');
+    const aSpotify = artistModal.querySelector('#artist-modal-spotify>a');
+    const modalWebsite = artistModal.querySelector('#artist-modal-website');
+    const aWebsite = artistModal.querySelector('#artist-modal-website>a');
 
     modalTitle.textContent = name;
     modalImage.src = image;
     modalBio.textContent = bio;
+    
+    if(!youtube) {
+      modalYoutube.classList.add('d-none');
+    } else {
+      modalYoutube.classList.remove('d-none');
+    }
+    aYoutube.href = youtube;
+    
+    if(!soundcloud) {
+      modalSoundcloud.classList.add('d-none');
+    } else {
+      modalSoundcloud.classList.remove('d-none');
+    }
+    aSoundcloud.href = soundcloud;
+    
+    if(!spotify) {
+      modalSpotify.classList.add('d-none');
+    } else {
+      modalSpotify.classList.remove('d-none');
+    }
+    aSpotify.href = spotify;
+    
+    if(!website) {
+      modalWebsite.classList.add('d-none');
+    } else {
+      modalWebsite.classList.remove('d-none');
+    }
+    aWebsite.href = website;
+
+
   })
 }
 

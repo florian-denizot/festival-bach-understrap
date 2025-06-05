@@ -25,6 +25,12 @@ get_header();
 	?>
 
 	<?php
+	// Upcoming event section
+	$args = [];
+	get_template_part( 'page-templates/partials/home/playlist', null, $args); 
+	?>
+
+	<?php
 	// News slider section
 	get_template_part( 'page-templates/partials/home/news'); 
 	?>

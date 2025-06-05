@@ -20,17 +20,17 @@ if($posts && is_array( $posts ) && count( $posts ) > 0) :
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mb-4">
           
           <?php foreach($posts as $posto): ?>
-            
-            <?php if(apply_filters( 'wpml_object_id', $posto, 'post')): ?>
-              <?php $posto = get_post(apply_filters( 'wpml_object_id', $posto, 'post')); ?>
-            <?php else: ?>
-              <?php $posto = get_post($posto); ?>
-            <?php endif; ?>
 			
-			      <?php if (has_post_thumbnail( $posto->ID ) ): ?>
+			<?php if(apply_filters( 'wpml_object_id', $posto, 'post')): ?>
+				<?php $posto = get_post(apply_filters( 'wpml_object_id', $posto, 'post')); ?>
+			<?php else: ?>
+				<?php $posto = get_post($posto); ?>
+			<?php endif; ?>
+			
+			<?php if (has_post_thumbnail( $posto->ID ) ): ?>
                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $posto->ID ), 'single-post-thumbnail' ); ?>
             <?php endif; ?>
-
+			
             <div class="col news-card">
               <div class="ratio ratio-4x3">
                 <img src="<?php echo $image[0]; ?>" class="object-fit-cover">

@@ -65,7 +65,7 @@ function cmp($a, $b){
   return  $a_date_time_strtotime >= $b_date_time_strtotime ? 1 : -1;
 };
 
-//usort($concerts, "cmp");
+usort($concerts, "cmp");
 
 /*
  ** DESC: Remove the old concerts
