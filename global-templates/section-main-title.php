@@ -27,11 +27,11 @@ endif;
             </div>
             <div class="bottom-line my-3"></div>
           <?php elseif($mainHeading['main_title']): ?>
-            <h1 class="display-1"><?php echo $mainHeading['main_title']; ?></h1>
+            <h1 class="display-1 main-heading-title"><?php echo $mainHeading['main_title']; ?></h1>
             <div class="bottom-line my-4"></div>
           <?php endif; ?>
           <?php if($mainHeading['subtitle']): ?>
-            <h3><?php echo $mainHeading['subtitle']; ?></h3>
+            <h3 class="main-heading-subtitle"><?php echo $mainHeading['subtitle']; ?></h3>
           <?php endif; ?>
         </div>
       </div>

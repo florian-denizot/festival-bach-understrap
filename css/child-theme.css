@@ -18261,6 +18261,7 @@ a:hover .underline {
 }
 #main-heading .main-heading-wrapper .main-heading-content {
   text-align: center;
+  /* Define the slide-in animation sequences */
 }
 #main-heading .main-heading-wrapper .main-heading-content h1, #main-heading .main-heading-wrapper .main-heading-content .h1, #main-heading .main-heading-wrapper .main-heading-content h3, #main-heading .main-heading-wrapper .main-heading-content .h3 {
   color: #fff;
@@ -18279,6 +18280,43 @@ a:hover .underline {
 #main-heading .main-heading-wrapper .main-heading-content .bottom-line {
   background-color: #fff;
   height: 3px;
+  animation: slideFromRight 0.8s ease-out forwards;
+}
+#main-heading .main-heading-wrapper .main-heading-content .main-heading-title, #main-heading .main-heading-wrapper .main-heading-content .main-heading-image-title {
+  animation: slideFromLeft 0.8s ease-out forwards;
+}
+#main-heading .main-heading-wrapper .main-heading-content .main-heading-subtitle {
+  animation: slideFromBottom 0.8s ease-out forwards;
+}
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /********************************* Partner section *********************************/
