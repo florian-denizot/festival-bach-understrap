@@ -8,12 +8,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 $taxonomy_terms = $args['taxonomy_terms'];
 $instruments_taxonomy_terms = isset($taxonomy_terms["instruments_taxonomy_terms"]) ? $taxonomy_terms["instruments_taxonomy_terms"] : array();
 $categories_taxonomy_terms = isset($taxonomy_terms["categories_taxonomy_terms"]) ? $taxonomy_terms["categories_taxonomy_terms"] : array();
+$types_taxonomy_terms = isset($taxonomy_terms["types_taxonomy_terms"]) ? $taxonomy_terms["types_taxonomy_terms"] : array();
 $halls = isset($args['halls']) ? $args['halls'] : array();
 
 $parameters_matches = $args['parameters_matches'];
 $instrument_matches = isset($parameters_matches["instrument"]) ? $parameters_matches["instrument"] : array();
 $category_matches = isset($parameters_matches["concert_category"]) ? $parameters_matches["concert_category"] : array();
 $hall_matches = isset($parameters_matches["hall"]) ? $parameters_matches["hall"] : array();
+$type_matches = isset($parameters_matches["concert_type"]) ? $parameters_matches["concert_type"] : array();
 
 $collapse = $args['collapse_filters'];
 
@@ -43,27 +45,28 @@ $display = get_field('display_filters');
             <div class="accordion-body">
               <div class="row">
                 
-              <?php if($halls): ?>
-                  <div class="col col-12 col-md-6 mb-4">
-                    <h6><?php _e('Venue', 'festival-bach-understrap'); ?></h6>
-                    <div class="d-flex flex-wrap">
-                      <?php foreach($halls as $hall): ?>
-                        <div class="flex-fill d-grid">
-                          <input type="checkbox"
-                              id="<?php echo $hall["slug"]?>"
-                              class="btn-check"
-                              <?php echo ParamsFromURL::isURLParameterAndInputMatch($hall_matches, $hall["id"]) ? "checked" : "";  ?>
-                              name="hall" value="<?php echo $hall["id"] ?>">
-                          <label for="<?php echo $hall["slug"] ?>" class="btn btn-outline-primary btn-sm">
-                            <?php echo $hall["title"] ?>
-                          </label>
-                        </div>
-                      <?php endforeach; ?>
-                    </div>
-                  </div>
-                <?php endif; ?>
-
                 <div class="col col-12 col-md-6">
+                  <?php if($types_taxonomy_terms): ?>
+                    <div  class="mb-4">
+                      <h6><?php _e('Type', 'festival-bach-understrap'); ?></h6>
+                      <div class="d-flex flex-wrap">
+                        <?php foreach($types_taxonomy_terms as $type_taxonomy): ?>
+                          <div class="flex-fill d-grid">
+                            <input type="checkbox"
+                                class="btn-check"
+                                id="<?php echo $type_taxonomy->slug?>"
+                                <?php echo ParamsFromURL::isURLParameterAndInputMatch($type_matches, $type_taxonomy->term_id) ? "checked" : "";  ?>
+                                name="concert_type" 
+                                value="<?php echo $type_taxonomy->term_id ?>">
+                            <label for="<?php echo $type_taxonomy->slug ?>" class="btn btn-outline-primary btn-sm">
+                              <?php echo $type_taxonomy->name ?>
+                            </label>
+                          </div>
+                        <?php endforeach; ?>
+                      </div>
+                    </div>
+                  <?php endif; ?>
+
                   <?php if($instruments_taxonomy_terms): ?>
                     <div class="mb-4">
                       <h6><?php _e('Instrument', 'festival-bach-understrap'); ?></h6>
@@ -107,6 +110,27 @@ $display = get_field('display_filters');
                   <?php endif; ?>
 
                 </div>
+                
+              <?php if($halls): ?>
+                  <div class="col col-12 col-md-6 mb-4">
+                    <h6><?php _e('Venue', 'festival-bach-understrap'); ?></h6>
+                    <div class="d-flex flex-wrap">
+                      <?php foreach($halls as $hall): ?>
+                        <div class="flex-fill d-grid">
+                          <input type="checkbox"
+                              id="<?php echo $hall["slug"]?>"
+                              class="btn-check"
+                              <?php echo ParamsFromURL::isURLParameterAndInputMatch($hall_matches, $hall["id"]) ? "checked" : "";  ?>
+                              name="hall" value="<?php echo $hall["id"] ?>">
+                          <label for="<?php echo $hall["slug"] ?>" class="btn btn-outline-primary btn-sm">
+                            <?php echo $hall["title"] ?>
+                          </label>
+                        </div>
+                      <?php endforeach; ?>
+                    </div>
+                  </div>
+                <?php endif; ?>
+
               </div>
               
               <div class="submit-button">

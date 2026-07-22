@@ -16,8 +16,9 @@ require(get_stylesheet_directory() . '/inc/filter-helper.php');
 
 $instruments_taxonomy_terms =  get_taxonomy_terms('instruments');
 $categories_taxonomy_terms =  get_taxonomy_terms('concert_categories');
+$types_taxonomy_terms =  get_taxonomy_terms('concert_types');
 
-$concert_type = get_field('concert_type');
+// $concert_type = get_field('concert_type');
 
 // Get the list of Halls
 $hallQuery = new WP_Query(
@@ -45,20 +46,22 @@ wp_reset_postdata();
 
 // Setup URL Parameters
 $filter_from_URL = new ParamsFromURL();
-$filter_from_URL->set_parameters_by_name('instrument', Array("concert_category", "hall"));
-$filter_from_URL->set_parameters_by_name('concert_category', Array("instrument", "hall"));
-$filter_from_URL->set_parameters_by_name('hall', Array("instrument", "category"));
+$filter_from_URL->set_parameters_by_name('instrument', Array("concert_category", "hall", "concert_type"));
+$filter_from_URL->set_parameters_by_name('concert_category', Array("instrument", "hall", "concert_type"));
+$filter_from_URL->set_parameters_by_name('hall', Array("instrument", "concert_category", "concert_type"));
+$filter_from_URL->set_parameters_by_name('concert_type', Array("instrument", "hall", "concert_category"));
 
 $parameters_matches = $filter_from_URL->get_parameters_from_URL();
 $instrument_matches = isset($parameters_matches["instrument"]) ? $parameters_matches["instrument"] : null;
 $concert_category_matches = isset($parameters_matches["concert_category"]) ? $parameters_matches["concert_category"] : null;
 $hall_matches = isset($parameters_matches["hall"]) ? $parameters_matches["hall"] : null;
+$concert_type_matches = isset($parameters_matches["concert_type"]) ? $parameters_matches["concert_type"] : null;
 
 // Get the concertlist
 $concerts = MergePostAndACFFields::withPostsAndACFAndTaxonomies("concerts", "concert", Array("instruments", "concert_categories", "concert_types"));
 
 // Filter the concerts by taxonomies
-$concerts = MergePostAndACFFields::filterArrayByTaxonomy($concerts, "concert_types", array($concert_type));
+$concerts = MergePostAndACFFields::filterArrayByTaxonomy($concerts, "concert_types", $concert_type_matches);
 $concerts = MergePostAndACFFields::filterArrayByTaxonomy($concerts, "instruments", $instrument_matches);
 $concerts = MergePostAndACFFields::filterArrayByTaxonomy($concerts, "concert_categories", $concert_category_matches);
 
@@ -68,12 +71,13 @@ $concerts = FilterHelper::filterArrayByRelation($concerts, "concert_hall", $hall
 // Remove concerts without date
 $concerts = array_filter($concerts, 'withDate');
 
+
 // Remove the old concerts
 $forthcoming_concerts = array_reverse(array_filter($concerts, 'newConcerts'));
 
 // Flag that determines if the filter box should be opened of closed
-$collapse_filters = is_array($hall_matches) && is_array($concert_category_matches) && is_array($instrument_matches) && 
-      (count($hall_matches) + count($concert_category_matches) + count($instrument_matches)) ? 
+$collapse_filters = is_array($hall_matches) && is_array($concert_category_matches) && is_array($instrument_matches) && is_array($concert_type_matches) && 
+      (count($hall_matches) + count($concert_category_matches) + count($instrument_matches) + count($concert_type_matches)) ? 
       false : true;
 
 get_header();
@@ -96,7 +100,8 @@ get_header();
     'parameters_matches' => $parameters_matches, 
     'taxonomy_terms' => [
       "instruments_taxonomy_terms" => $instruments_taxonomy_terms, 
-      "categories_taxonomy_terms" => $categories_taxonomy_terms],
+      "categories_taxonomy_terms" => $categories_taxonomy_terms,
+      "types_taxonomy_terms" => $types_taxonomy_terms],
     'halls' => $halls,
     'collapse_filters' => $collapse_filters
   );
