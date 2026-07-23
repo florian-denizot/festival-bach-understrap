@@ -21,6 +21,14 @@ h1, h2, h3, h4, h5, h6 {
   text-align: justify;
 }
 
+* {
+  overflow-anchor: none !important;
+}
+
+html, body {
+  scroll-behavior: auto !important;
+}
+
 .anchor {
   scroll-margin-top: 90px;
 }

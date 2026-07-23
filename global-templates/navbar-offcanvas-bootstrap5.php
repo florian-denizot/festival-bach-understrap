@@ -13,7 +13,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
 <nav id="main-nav" class="navbar navbar-expand-xl navbar-dark" aria-labelledby="main-nav-label">
-	<div class="nav-overlay" style="opacity: 0.4;"></div>
+	<div class="nav-overlay" style="opacity: 1.0;"></div>
 
 	<h2 id="main-nav-label" class="screen-reader-text">
 		<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>

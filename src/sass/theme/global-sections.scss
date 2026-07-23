@@ -68,7 +68,7 @@
 /************************************* Navbar **************************************/
 
 #wrapper-navbar{
-  float: left;
+  float: none;
   width: 100%;
   font-family: $headings-font-family;
 
@@ -271,13 +271,13 @@
       
       .slick-slide {
         float: none;
-        align-self: stretch;
+        display: flex;
         height: auto;
 
         & > div {
           display: flex;
           align-items: center;
-          height: 100%;
+          width: 100%;
           margin: 0 5px;
           padding:10px;
           background-color: $white;

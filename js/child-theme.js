@@ -10996,11 +10996,18 @@
 	/**
 	 * Increase opacity of main navbar when the page is scrolled down
 	 */
-	document.addEventListener('scroll', () => {
+	const updateNavbarOpacity = () => {
 	  var scrollDown = window.scrollY;
 	  var navOverlay = document.querySelector('.nav-overlay');
-	  navOverlay.style.opacity = ((1 - (400 - scrollDown) / 400) * 0.8 + 0.4).toString();
-	});
+	  if (navOverlay) {
+	    var opacity = 1.0 - scrollDown / 400 * 0.6;
+	    opacity = Math.max(0.4, Math.min(1.0, opacity));
+	    navOverlay.style.opacity = opacity.toString();
+	  }
+	};
+	document.addEventListener('scroll', updateNavbarOpacity);
+	window.addEventListener('DOMContentLoaded', updateNavbarOpacity);
+	updateNavbarOpacity();
 	jQuery(document).ready(function () {
 	  /**
 	   * Setup Partner Carousel
