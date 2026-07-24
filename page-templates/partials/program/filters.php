@@ -3,6 +3,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $container = get_theme_mod( 'understrap_container_type' );
+$displayTypeFilter = get_field('display_concert_type_filter');
 
 //Get Template Params
 $taxonomy_terms = $args['taxonomy_terms'];
@@ -46,7 +47,7 @@ $display = get_field('display_filters');
               <div class="row">
                 
                 <div class="col col-12 col-md-6">
-                  <?php if($types_taxonomy_terms): ?>
+                  <?php if($types_taxonomy_terms && $displayTypeFilter == true): ?>
                     <div  class="mb-4">
                       <h6><?php _e('Type', 'festival-bach-understrap'); ?></h6>
                       <div class="d-flex flex-wrap">

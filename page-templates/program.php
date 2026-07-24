@@ -18,7 +18,12 @@ $instruments_taxonomy_terms =  get_taxonomy_terms('instruments');
 $categories_taxonomy_terms =  get_taxonomy_terms('concert_categories');
 $types_taxonomy_terms =  get_taxonomy_terms('concert_types');
 
-// $concert_type = get_field('concert_type');
+
+$displayTypeFilter = get_field('display_concert_type_filter');
+if($displayTypeFilter !== true){
+  $concert_type = get_field('concert_type');
+}
+
 
 // Get the list of Halls
 $hallQuery = new WP_Query(
@@ -61,9 +66,13 @@ $concert_type_matches = isset($parameters_matches["concert_type"]) ? $parameters
 $concerts = MergePostAndACFFields::withPostsAndACFAndTaxonomies("concerts", "concert", Array("instruments", "concert_categories", "concert_types"));
 
 // Filter the concerts by taxonomies
-$concerts = MergePostAndACFFields::filterArrayByTaxonomy($concerts, "concert_types", $concert_type_matches);
 $concerts = MergePostAndACFFields::filterArrayByTaxonomy($concerts, "instruments", $instrument_matches);
 $concerts = MergePostAndACFFields::filterArrayByTaxonomy($concerts, "concert_categories", $concert_category_matches);
+if($displayTypeFilter == true){
+  $concerts = MergePostAndACFFields::filterArrayByTaxonomy($concerts, "concert_types", $concert_type_matches);
+} else {
+  $concerts = MergePostAndACFFields::filterArrayByTaxonomy($concerts, "concert_types", array($concert_type));
+}
 
 // Filter the concerts by halls
 $concerts = FilterHelper::filterArrayByRelation($concerts, "concert_hall", $hall_matches);
