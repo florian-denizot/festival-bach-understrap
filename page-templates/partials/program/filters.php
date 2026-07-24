@@ -9,7 +9,7 @@ $displayTypeFilter = get_field('display_concert_type_filter');
 $taxonomy_terms = $args['taxonomy_terms'];
 $instruments_taxonomy_terms = isset($taxonomy_terms["instruments_taxonomy_terms"]) ? $taxonomy_terms["instruments_taxonomy_terms"] : array();
 $categories_taxonomy_terms = isset($taxonomy_terms["categories_taxonomy_terms"]) ? $taxonomy_terms["categories_taxonomy_terms"] : array();
-$types_taxonomy_terms = isset($taxonomy_terms["types_taxonomy_terms"]) ? $taxonomy_terms["types_taxonomy_terms"] : array();
+$types_taxonomy_terms = isset($taxonomy_terms["types_taxonomy_terms"]) && is_array($taxonomy_terms["types_taxonomy_terms"]) ? array_reverse($taxonomy_terms["types_taxonomy_terms"]) : array();
 $halls = isset($args['halls']) ? $args['halls'] : array();
 
 $parameters_matches = $args['parameters_matches'];
