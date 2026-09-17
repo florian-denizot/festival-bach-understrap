@@ -1,0 +1,294 @@
+/* ============================================================
+ * Welcome Video Modal
+ * Square corners + primary red accents, aligned with the
+ * "Ask Bach" interactive video modal.
+ * ============================================================ */
+
+:root {
+  --welcome-video-primary: var(--bs-primary, #e9121b);
+  --welcome-video-primary-rgb: var(--bs-primary-rgb, 233, 18, 27);
+  --welcome-video-ink: #111;
+  --welcome-video-muted: #6c757d;
+  --welcome-video-border: #e5e5e5;
+}
+
+#welcome-video-modal .welcome-video-content {
+  position: relative;
+
+  border: 0;
+  border-radius: 0;
+
+  overflow: hidden;
+
+  background: #fff;
+
+  box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.22);
+}
+
+#welcome-video-modal .welcome-video-accent {
+  height: 4px;
+  width: 100%;
+  background: var(--welcome-video-primary);
+}
+
+/* ============================================================
+ * Header
+ * ============================================================ */
+
+#welcome-video-modal .welcome-video-header {
+  align-items: flex-start;
+  gap: 1rem;
+
+  padding: 1.5rem 1.75rem 1.25rem;
+
+  border-bottom: 0;
+  border-radius: 0;
+}
+
+#welcome-video-modal .welcome-video-heading {
+  min-width: 0;
+}
+
+#welcome-video-modal .welcome-video-kicker {
+  font-size: clamp(1.5rem, 2vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  color: var(--welcome-video-ink);
+
+  line-height: 1.15;
+  text-transform: uppercase;
+
+  color: var(--welcome-video-primary);
+}
+
+#welcome-video-modal .welcome-video-lead {
+  margin-top: 0.55rem;
+  max-width: 36rem;
+
+  color: var(--welcome-video-muted);
+
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+#welcome-video-modal .btn-close {
+  margin-top: 0.15rem;
+
+  border-radius: 0;
+
+  opacity: 0.7;
+}
+
+#welcome-video-modal .btn-close:hover {
+  opacity: 1;
+}
+
+/* ============================================================
+ * Body / Player
+ * ============================================================ */
+
+#welcome-video-modal .welcome-video-body {
+  padding: 0 1.75rem 1.5rem;
+
+  background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
+}
+
+#welcome-video-modal .welcome-video-player {
+  background: #000;
+
+  border: 1px solid #111;
+  border-radius: 0;
+
+  overflow: hidden;
+
+  box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.14);
+}
+
+#welcome-video-container {
+  position: relative;
+  background: #000;
+}
+
+#welcome-video-container iframe {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+}
+
+#welcome-video-modal .welcome-video-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  padding: 0;
+
+  border: 0;
+
+  background: rgba(0, 0, 0, 0.18);
+  color: #fff;
+
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition: opacity 0.35s ease;
+}
+
+#welcome-video-modal .welcome-video-placeholder.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#welcome-video-modal .welcome-video-placeholder:hover,
+#welcome-video-modal .welcome-video-placeholder:focus-visible {
+  background: rgba(255, 255, 255, 0.02);
+  outline: none;
+  box-shadow: none;
+}
+
+/* ============================================================
+ * Footer actions
+ * ============================================================ */
+
+#welcome-video-modal .welcome-video-footer {
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+
+  padding: 1rem 1.75rem 1.25rem;
+
+  border-top: 1px solid var(--welcome-video-border);
+  border-radius: 0;
+
+  background: #fff;
+}
+
+#welcome-video-modal .welcome-video-footer > * {
+  margin: 0;
+}
+
+#welcome-video-modal .welcome-video-dismiss {
+  appearance: none;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.45rem;
+
+  padding: 0.35rem 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--welcome-video-muted);
+
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.2;
+
+  cursor: pointer;
+}
+
+#welcome-video-modal .welcome-video-dismiss:hover,
+#welcome-video-modal .welcome-video-dismiss:focus-visible {
+  color: var(--welcome-video-primary);
+
+  outline: none;
+}
+
+#welcome-video-modal .welcome-video-dismiss-icon {
+  display: inline-flex;
+
+  width: 0.95rem;
+
+  justify-content: center;
+}
+
+#welcome-video-modal .welcome-video-close {
+  border-radius: 0;
+
+  padding: 0.6rem 1.25rem;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+ * Mobile
+ * ============================================================ */
+
+@media (max-width: 575.98px) {
+  #welcome-video-modal .modal-dialog {
+    width: calc(100% - 1rem);
+    max-width: calc(100vw - 1rem);
+
+    margin: 0.5rem auto;
+  }
+
+  #welcome-video-modal .welcome-video-header,
+  #welcome-video-modal .welcome-video-body,
+  #welcome-video-modal .welcome-video-footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  #welcome-video-modal .welcome-video-header {
+    padding-top: 1.15rem;
+    padding-bottom: 1rem;
+  }
+
+  #welcome-video-modal .welcome-video-kicker {
+    font-size: 1.35rem;
+
+    word-break: break-word;
+  }
+
+  #welcome-video-modal .welcome-video-lead {
+    font-size: 0.9rem;
+  }
+
+  #welcome-video-modal .welcome-video-placeholder-icon {
+    width: 3.25rem;
+    height: 3.25rem;
+
+    margin-bottom: 0.75rem;
+  }
+
+  #welcome-video-modal .welcome-video-footer {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  #welcome-video-modal .welcome-video-close {
+    width: 100%;
+  }
+
+  #welcome-video-modal .welcome-video-dismiss {
+    justify-content: center;
+  }
+}
