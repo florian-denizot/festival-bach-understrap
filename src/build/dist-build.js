@@ -25,11 +25,12 @@ async function copyDir(src, dest) {
 		'package-lock.json',
 		'phpcs.xml.dist',
 		'readme.txt',
-		'releases'
+		'releases',
+		'festival-bach-understrap.zip'
 	];
 
     for (let entry of entries) {
-		if ( ignore.indexOf( entry.name ) != -1 ) {
+		if ( ignore.indexOf( entry.name ) != -1 || entry.name.endsWith('.zip') ) {
 			continue;
 		}
         let srcPath = path.join(src, entry.name);

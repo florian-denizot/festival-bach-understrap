@@ -19,7 +19,9 @@
     "copy-assets": "node src/build/copy-assets.js",
     "dist": "npm-run-all --parallel css js",
     "dist-build": "node src/build/dist-build.js",
-    "dist-clean": "node src/build/dist-clean.js"
+    "dist-clean": "node src/build/dist-clean.js",
+    "zip": "python src/build/create-zip.py",
+    "release": "npm-run-all dist dist-clean dist-build && python src/build/create-zip.py"
   },
   "engines": {
     "node": ">=14"
