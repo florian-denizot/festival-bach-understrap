@@ -185,6 +185,8 @@
 }
 
 #welcome-video-modal .welcome-video-dismiss {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 
   display: inline-flex;
@@ -292,3 +294,4 @@
     justify-content: center;
   }
 }
+/*# sourceMappingURL=welcome-modal.css.map */

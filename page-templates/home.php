@@ -20,6 +20,11 @@ get_header();
 	?>
 
 	<?php
+	// Image slider section
+	get_template_part( 'page-templates/partials/home/image-slider'); 
+	?>
+
+	<?php
 	// Upcoming event section
 	get_template_part( 'page-templates/partials/home/upcoming-events'); 
 	?>
